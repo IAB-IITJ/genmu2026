@@ -1,4 +1,4 @@
-# webpage for Genμ Challenge @ICCV'26
+# webpage for Genμ Challenge @ECCV'26
 
 This updated site covers the 2026 Genμ 2.0 edition:
 
