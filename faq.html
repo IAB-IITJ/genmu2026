@@ -42,7 +42,31 @@ nav a.prev-year{color:var(--muted);font-size:.85rem}
 .faq-item p{margin:0;color:var(--muted)}
 .footer{margin:28px 0 10px;color:var(--muted);font-size:.94rem;padding-top:16px;border-top:1px solid rgba(0,0,0,.08)}
 @media (max-width:980px){.hero-grid{grid-template-columns:1fr}.topbar{position:static}nav{justify-content:flex-start}.logo-row{justify-content:flex-start}}
+
+.challenge-notice{
+  margin:14px 0 0;padding:10px 14px;border:1px solid #b9d5bf;background:#f3faf4;
+  color:#254d2d;font-size:.94rem;line-height:1.5
+}
+.challenge-notice strong{font-weight:700}
+.challenge-notice time{white-space:nowrap}
+.mjx-container{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.formula-box mjx-container{font-size:1.05em;margin:.2em 0!important}
+@media (max-width:600px){.challenge-notice{font-size:.9rem;padding:9px 11px}}
+
 </style>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']],
+    processEscapes: true
+  },
+  chtml: { scale: 0.98 }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
 </head>
 <body>
 <div class="container">
@@ -74,6 +98,10 @@ nav a.prev-year{color:var(--muted);font-size:.85rem}
     <a href="faq.html" class="active">FAQ</a>
     <a href="https://shreyanshhub.github.io/GENMU-/" target="_blank" class="prev-year">Genμ 2025 ↗</a>
   </nav>
+  <div class="challenge-notice" role="status" aria-label="Challenge status">
+    <strong>Challenge open.</strong> Final submission deadline: <time datetime="2026-07-01">1 July 2026</time>. Evaluation and results declaration: <time datetime="2026-07-07">7 July 2026</time>.
+  </div>
+
 
 <section class="hero">
   <div class="hero-grid">
@@ -127,7 +155,7 @@ nav a.prev-year{color:var(--muted);font-size:.85rem}
     </div>
     <div class="faq-item">
       <h4>When are the challenge dates?</h4>
-      <p>Exact dates for the 2026 cycle will be posted on the home page as soon as the submission window is confirmed. Winners will be announced at the U&amp;ME Workshop at ECCV 2026. Follow the <a href="https://sites.google.com/view/u-and-me-workshop/" target="_blank">workshop website</a> for updates.</p>
+      <p>The challenge is open. The final submission deadline is <strong>1 July 2026</strong>. Submission evaluation and results declaration are scheduled for <strong>7 July 2026</strong>. Follow the <a href="https://sites.google.com/view/u-and-me-workshop/" target="_blank">workshop website</a> for related workshop updates.</p>
     </div>
     <div class="faq-item">
       <h4>How do I contact the organizers?</h4>

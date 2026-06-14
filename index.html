@@ -94,13 +94,37 @@ tr:last-child td{border-bottom:none}
     nav{justify-content:flex-start}
     .logo-row{justify-content:flex-start}
 }
+
+.challenge-notice{
+  margin:14px 0 0;padding:10px 14px;border:1px solid #b9d5bf;background:#f3faf4;
+  color:#254d2d;font-size:.94rem;line-height:1.5
+}
+.challenge-notice strong{font-weight:700}
+.challenge-notice time{white-space:nowrap}
+.mjx-container{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.formula-box mjx-container{font-size:1.05em;margin:.2em 0!important}
+@media (max-width:600px){.challenge-notice{font-size:.9rem;padding:9px 11px}}
+
 </style>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']],
+    processEscapes: true
+  },
+  chtml: { scale: 0.98 }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
 </head>
 <body>
 <div class="container">
   <header class="topbar">
     <div class="brandbox">
-      
+      <div class="brandmark">Gμ</div>
       <div class="brandtext">
         <div class="kicker">Multimodal unlearning · ECCV 2026</div>
         <h1>Genμ 2.0</h1>
@@ -126,11 +150,15 @@ tr:last-child td{border-bottom:none}
     <a href="faq.html" class="">FAQ</a>
     <a href="https://shreyanshhub.github.io/GENMU-/" target="_blank" class="prev-year">Genμ 2025 ↗</a>
   </nav>
+  <div class="challenge-notice" role="status" aria-label="Challenge status">
+    <strong>Challenge open.</strong> Final submission deadline: <time datetime="2026-07-01">1 July 2026</time>. Evaluation and results declaration: <time datetime="2026-07-07">7 July 2026</time>.
+  </div>
+
 
 <section class="hero">
   <div class="hero-grid">
     <div>
-      <span class="chip">Genμ 2.0 · 2026 edition · ECCV 2026</span>
+      <span class="chip">Challenge open · Genμ 2.0 · ECCV 2026</span>
       <h2>Multimodal Identity Unlearning Challenge</h2>
       <p>The 2026 update expands the original Genμ concept-unlearning benchmark into a broader privacy-preserving suite co-located with the U&amp;ME Workshop at ECCV 2026. Three tracks test whether generative models can forget a specific identity or concept without damaging everything around it.</p>
       <div class="callout">Three tracks, four tasks, one theme: remove a specific identity or concept while preserving everything around it. <a href="https://kaggle.com/competitions/gen-challenge-u-me-workshop-iccv-25" target="_blank">View on Kaggle ↗</a></div>
@@ -153,24 +181,24 @@ tr:last-child td{border-bottom:none}
   <p class="lead">Key dates for the 2026 edition — plan your submissions around these milestones.</p>
   <div class="dates-grid">
     <div class="date-card">
-      <div class="d-label">Registration opens</div>
-      <div class="d-date">TBD 2026</div>
-      <div class="d-desc">Complete the official registration form to join the challenge.</div>
+      <div class="d-label">Challenge status</div>
+      <div class="d-date">Open now</div>
+      <div class="d-desc">Teams may submit to one or more challenge tracks.</div>
     </div>
     <div class="date-card">
-      <div class="d-label">Submission opens</div>
-      <div class="d-date">TBD 2026</div>
-      <div class="d-desc">Upload results and track progress on the Kaggle leaderboard.</div>
+      <div class="d-label">Final submission deadline</div>
+      <div class="d-date"><time datetime="2026-07-01">1 July 2026</time></div>
+      <div class="d-desc">Upload the final evaluation CSV and model artifacts.</div>
     </div>
     <div class="date-card">
-      <div class="d-label">Final model upload</div>
-      <div class="d-date">TBD 2026</div>
-      <div class="d-desc">Submit final model checkpoints for offline evaluation.</div>
+      <div class="d-label">Evaluation &amp; declaration</div>
+      <div class="d-date"><time datetime="2026-07-07">7 July 2026</time></div>
+      <div class="d-desc">Final submissions are evaluated and results are declared.</div>
     </div>
     <div class="date-card">
-      <div class="d-label">Winners announced</div>
+      <div class="d-label">Workshop presentation</div>
       <div class="d-date">ECCV 2026</div>
-      <div class="d-desc">Results presented at the U&amp;ME Workshop at ECCV 2026.</div>
+      <div class="d-desc">Challenge outcomes will be presented with the U&amp;ME Workshop.</div>
     </div>
   </div>
 </section>

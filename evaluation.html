@@ -55,7 +55,31 @@ nav a.prev-year{color:var(--muted);font-size:.85rem}
 .acro-item{background:#f8fbff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:.93rem}
 .acro-item strong{color:var(--brand)}
 @media (max-width:980px){.hero-grid,.grid-2{grid-template-columns:1fr}.topbar{position:static}nav{justify-content:flex-start}.logo-row{justify-content:flex-start}}
+
+.challenge-notice{
+  margin:14px 0 0;padding:10px 14px;border:1px solid #b9d5bf;background:#f3faf4;
+  color:#254d2d;font-size:.94rem;line-height:1.5
+}
+.challenge-notice strong{font-weight:700}
+.challenge-notice time{white-space:nowrap}
+.mjx-container{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.formula-box mjx-container{font-size:1.05em;margin:.2em 0!important}
+@media (max-width:600px){.challenge-notice{font-size:.9rem;padding:9px 11px}}
+
 </style>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']],
+    processEscapes: true
+  },
+  chtml: { scale: 0.98 }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
 </head>
 <body>
 <div class="container">
@@ -87,6 +111,10 @@ nav a.prev-year{color:var(--muted);font-size:.85rem}
     <a href="faq.html" class="">FAQ</a>
     <a href="https://shreyanshhub.github.io/GENMU-/" target="_blank" class="prev-year">Genμ 2025 ↗</a>
   </nav>
+  <div class="challenge-notice" role="status" aria-label="Challenge status">
+    <strong>Challenge open.</strong> Final submission deadline: <time datetime="2026-07-01">1 July 2026</time>. Evaluation and results declaration: <time datetime="2026-07-07">7 July 2026</time>.
+  </div>
+
 
 <section class="hero">
   <div class="hero-grid">
@@ -110,10 +138,10 @@ nav a.prev-year{color:var(--muted);font-size:.85rem}
     <div class="card">
       <span class="badge green" style="margin-bottom:10px;display:inline-flex">A1 — Similar identity unlearning</span>
       <ul>
-        <li><strong>Forgetting Score (FS):</strong> 1 − cos(f_gen, f_f) — cosine distance between generated and target identity embedding; higher = better forgotten</li>
+        <li><strong>Forgetting Score (FS):</strong> \(1-\cos(\mathbf{f}_{\mathrm{gen}},\mathbf{f}_{f})\) — cosine distance between generated and target identity embedding; higher = better forgotten</li>
         <li><strong>Retention Score (RS):</strong> mean cosine similarity over the retention set — measures preservation of nearby identities</li>
-        <li><strong>Leakage Test:</strong> biometric verification at FAR = 1e-3; target should fail verification</li>
-        <li><strong>Geometry Preservation (GP):</strong> Frobenius norm between pairwise angular distance matrices before and after unlearning</li>
+        <li><strong>Leakage Test:</strong> biometric verification at \(\mathrm{FAR}=10^{-3}\); target should fail verification</li>
+        <li><strong>Geometry Preservation (GP):</strong> Frobenius norm \(\lVert\Delta D\rVert_F\) between pairwise angular-distance matrices before and after unlearning</li>
       </ul>
     </div>
     <div class="card">
@@ -128,12 +156,12 @@ nav a.prev-year{color:var(--muted);font-size:.85rem}
   <div class="card" style="margin-top:14px">
     <h4>Variable and acronym glossary — Face Track</h4>
     <table class="def-table">
-      <tr><td>f_gen</td><td>ArcFace embedding of a generated image after unlearning</td></tr>
-      <tr><td>f_f</td><td>ArcFace embedding of the forgotten (target) identity</td></tr>
-      <tr><td>FAR</td><td>False Accept Rate — threshold at 1e-3 used for leakage check</td></tr>
-      <tr><td>FS</td><td>Forgetting Score = 1 − cos(f_gen, f_f); higher is better</td></tr>
+      <tr><td>\(\mathbf{f}_{\mathrm{gen}}\)</td><td>ArcFace embedding of a generated image after unlearning</td></tr>
+      <tr><td>\(\mathbf{f}_{f}\)</td><td>ArcFace embedding of the forgotten (target) identity</td></tr>
+      <tr><td>FAR</td><td>False Accept Rate — threshold at \(10^{-3}\) used for leakage check</td></tr>
+      <tr><td>FS</td><td>Forgetting Score = \(1-\cos(\mathbf{f}_{\mathrm{gen}},\mathbf{f}_{f})\); higher is better</td></tr>
       <tr><td>RS</td><td>Retention Score = mean cosine similarity over retained identities</td></tr>
-      <tr><td>GP</td><td>Geometry Preservation = Frobenius norm of Δ(pairwise angular matrix)</td></tr>
+      <tr><td>GP</td><td>Geometry Preservation = Frobenius norm \(\lVert\Delta D\rVert_F\) of the pairwise angular-distance matrix</td></tr>
       <tr><td>SSIM</td><td>Structural Similarity Index Measure — image quality metric</td></tr>
       <tr><td>PSNR</td><td>Peak Signal-to-Noise Ratio — image reconstruction fidelity</td></tr>
       <tr><td>FID</td><td>Fréchet Inception Distance — distributional image quality metric</td></tr>
@@ -149,9 +177,9 @@ nav a.prev-year{color:var(--muted);font-size:.85rem}
     <div class="card">
       <span class="badge purple" style="margin-bottom:10px;display:inline-flex">B1 — Prosody and style preservation</span>
       <ul>
-        <li><strong>Speaker Forgetting Score (FSA):</strong> 1 − cos(e_gen, e_f) — cosine distance from target speaker embedding; higher = better forgotten</li>
+        <li><strong>Speaker Forgetting Score (FSA):</strong> \(1-\cos(\mathbf{e}_{\mathrm{gen}},\mathbf{e}_{f})\) — cosine distance from target speaker embedding; higher = better forgotten</li>
         <li><strong>Speaker Retention Score (RSA):</strong> mean cosine similarity over retained speakers</li>
-        <li><strong>Prosody Preservation Score (PPS):</strong> compare F0 (pitch), energy, and rhythm matrices between pre- and post-unlearning outputs</li>
+        <li><strong>Prosody Preservation Score (PPS):</strong> compare \(F_0\) (pitch), energy, and rhythm matrices between pre- and post-unlearning outputs</li>
         <li><strong>Leakage Test:</strong> target-speaker verification should fail at standard EER threshold</li>
       </ul>
     </div>
@@ -169,12 +197,12 @@ nav a.prev-year{color:var(--muted);font-size:.85rem}
   <div class="card" style="margin-top:14px">
     <h4>Variable and acronym glossary — Speech Track</h4>
     <table class="def-table">
-      <tr><td>e_gen</td><td>Speaker embedding of generated audio after unlearning</td></tr>
-      <tr><td>e_f</td><td>Speaker embedding of the forgotten (target) speaker</td></tr>
-      <tr><td>FSA</td><td>Forgetting Score (Audio) = 1 − cos(e_gen, e_f); higher is better</td></tr>
+      <tr><td>\(\mathbf{e}_{\mathrm{gen}}\)</td><td>Speaker embedding of generated audio after unlearning</td></tr>
+      <tr><td>\(\mathbf{e}_{f}\)</td><td>Speaker embedding of the forgotten (target) speaker</td></tr>
+      <tr><td>FSA</td><td>Forgetting Score (Audio) = \(1-\cos(\mathbf{e}_{\mathrm{gen}},\mathbf{e}_{f})\); higher is better</td></tr>
       <tr><td>RSA</td><td>Retention Score (Audio) = mean cosine similarity over retained speakers</td></tr>
-      <tr><td>PPS</td><td>Prosody Preservation Score — based on F0, energy, and rhythm matrix comparison</td></tr>
-      <tr><td>F0</td><td>Fundamental frequency (pitch) contour extracted per utterance</td></tr>
+      <tr><td>PPS</td><td>Prosody Preservation Score — based on \(F_0\), energy, and rhythm matrix comparison</td></tr>
+      <tr><td>\(F_0\)</td><td>Fundamental frequency (pitch) contour extracted per utterance</td></tr>
       <tr><td>EER</td><td>Equal Error Rate — speaker verification threshold</td></tr>
       <tr><td>MOS</td><td>Mean Opinion Score — subjective speech naturalness rating (1–5)</td></tr>
       <tr><td>UTMOS</td><td>Automatic MOS predictor (neural model-based)</td></tr>
@@ -191,27 +219,29 @@ nav a.prev-year{color:var(--muted);font-size:.85rem}
   <div class="card">
     <p><strong>Primary metric:</strong> ERR Score (Erasing-Retention-Robustness) — harmonic mean of five sub-scores:</p>
     <div class="formula-box">
-      ERR = HM( Ā_fgt, Ā_ret, Ā_adj, Ā_ind, Ā_adv )
+      \[
+      \mathrm{ERR}=\operatorname{HM}\!\left(\bar{A}_{\mathrm{fgt}},\bar{A}_{\mathrm{ret}},\bar{A}_{\mathrm{adj}},\bar{A}_{\mathrm{ind}},\bar{A}_{\mathrm{adv}}\right)
+      \]
     </div>
     <div class="acro-grid">
-      <div class="acro-item"><strong>Ā_fgt</strong> — Forgetting accuracy; higher = better erasing of target concept</div>
-      <div class="acro-item"><strong>Ā_ret</strong> — Retention accuracy; higher = better preservation of retained concepts</div>
-      <div class="acro-item"><strong>Ā_adj</strong> — Adjacent-concept accuracy; higher = less collateral damage to related concepts</div>
-      <div class="acro-item"><strong>Ā_ind</strong> — Indirect-prompt robustness; higher = concept stays forgotten under indirect prompts</div>
-      <div class="acro-item"><strong>Ā_adv</strong> — Adversarial-prompt robustness; higher = concept stays forgotten under adversarial prompts</div>
+      <div class="acro-item"><strong>\(\bar{A}_{\mathrm{fgt}}\)</strong> — Forgetting accuracy; higher = better erasing of target concept</div>
+      <div class="acro-item"><strong>\(\bar{A}_{\mathrm{ret}}\)</strong> — Retention accuracy; higher = better preservation of retained concepts</div>
+      <div class="acro-item"><strong>\(\bar{A}_{\mathrm{adj}}\)</strong> — Adjacent-concept accuracy; higher = less collateral damage to related concepts</div>
+      <div class="acro-item"><strong>\(\bar{A}_{\mathrm{ind}}\)</strong> — Indirect-prompt robustness; higher = concept stays forgotten under indirect prompts</div>
+      <div class="acro-item"><strong>\(\bar{A}_{\mathrm{adv}}\)</strong> — Adversarial-prompt robustness; higher = concept stays forgotten under adversarial prompts</div>
       <div class="acro-item"><strong>HM</strong> — Harmonic Mean; penalises methods that sacrifice one axis for another</div>
     </div>
-    <p style="margin-top:14px"><strong>Tie-breaker — Weight-Change Ratio:</strong> (1/N_c) Σ ‖θ_orig − θ_un‖ / Total parameters. Smaller = fewer weight changes needed.</p>
+    <p style="margin-top:14px"><strong>Tie-breaker — Weight-Change Ratio:</strong> \(\displaystyle \frac{1}{N_c}\sum \frac{\lVert\theta_{\mathrm{orig}}-\theta_{\mathrm{un}}\rVert}{\text{total parameters}}\). Smaller = fewer weight changes needed.</p>
     <table class="def-table" style="margin-top:10px">
-      <tr><td>N_c</td><td>Number of target concepts</td></tr>
-      <tr><td>N_img</td><td>Number of images generated per concept</td></tr>
-      <tr><td>θ_orig</td><td>Original (pre-unlearning) model weights</td></tr>
-      <tr><td>θ_un</td><td>Unlearned model weights</td></tr>
-      <tr><td>N_c_tar</td><td>Number of target (forgotten) concepts</td></tr>
-      <tr><td>N_c_ret</td><td>Number of retention-test concepts</td></tr>
-      <tr><td>N_c_adj</td><td>Number of adjacent / correlated concepts</td></tr>
+      <tr><td>\(N_c\)</td><td>Number of target concepts</td></tr>
+      <tr><td>\(N_{\mathrm{img}}\)</td><td>Number of images generated per concept</td></tr>
+      <tr><td>\(\theta_{\mathrm{orig}}\)</td><td>Original (pre-unlearning) model weights</td></tr>
+      <tr><td>\(\theta_{\mathrm{un}}\)</td><td>Unlearned model weights</td></tr>
+      <tr><td>\(N_{c,\mathrm{tar}}\)</td><td>Number of target (forgotten) concepts</td></tr>
+      <tr><td>\(N_{c,\mathrm{ret}}\)</td><td>Number of retention-test concepts</td></tr>
+      <tr><td>\(N_{c,\mathrm{adj}}\)</td><td>Number of adjacent / correlated concepts</td></tr>
     </table>
-    <p style="margin-top:12px;color:var(--muted)"><strong>Baselines:</strong> ESD (Erased Stable Diffusion), CA (Concept Ablation), FMN (Forget-Me-Not), FADE — see <a href="baselines.html">Baselines page</a> for full citations.</p>
+    <p style="margin-top:12px;color:var(--muted)"><strong>Baselines:</strong> ESD (Erased Stable Diffusion), CA (Concept Ablation), FMN (Forget-Me-Not), and FADE (Fine-Grained Attenuation for Diffusion Erasure) — see <a href="baselines.html">Baselines page</a> for full citations.</p>
   </div>
 </section>
 

@@ -56,7 +56,31 @@ tr:last-child td{border-bottom:none}
 .link-btn:hover{background:#dbe7ff;text-decoration:none}
 .link-btn.green{background:#e6f7f0;color:var(--good);border-color:rgba(15,138,95,.2)}
 @media (max-width:980px){.hero-grid,.grid-2{grid-template-columns:1fr}.topbar{position:static}nav{justify-content:flex-start}.logo-row{justify-content:flex-start}}
+
+.challenge-notice{
+  margin:14px 0 0;padding:10px 14px;border:1px solid #b9d5bf;background:#f3faf4;
+  color:#254d2d;font-size:.94rem;line-height:1.5
+}
+.challenge-notice strong{font-weight:700}
+.challenge-notice time{white-space:nowrap}
+.mjx-container{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.formula-box mjx-container{font-size:1.05em;margin:.2em 0!important}
+@media (max-width:600px){.challenge-notice{font-size:.9rem;padding:9px 11px}}
+
 </style>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']],
+    processEscapes: true
+  },
+  chtml: { scale: 0.98 }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
 </head>
 <body>
 <div class="container">
@@ -88,6 +112,10 @@ tr:last-child td{border-bottom:none}
     <a href="faq.html" class="">FAQ</a>
     <a href="https://shreyanshhub.github.io/GENMU-/" target="_blank" class="prev-year">Genμ 2025 ↗</a>
   </nav>
+  <div class="challenge-notice" role="status" aria-label="Challenge status">
+    <strong>Challenge open.</strong> Final submission deadline: <time datetime="2026-07-01">1 July 2026</time>. Evaluation and results declaration: <time datetime="2026-07-07">7 July 2026</time>.
+  </div>
+
 
 <section class="hero">
   <div class="hero-grid">
@@ -116,29 +144,29 @@ tr:last-child td{border-bottom:none}
         <tr>
           <td><strong>ESD</strong></td>
           <td>Erased Stable Diffusion</td>
-          <td>Concept unlearning via gradient-based weight erasure</td>
-          <td><a href="https://arxiv.org/pdf/2303.07345" target="_blank">Gandikota et al., 2023</a></td>
+          <td>Model-weight concept erasure using negative guidance as the training signal</td>
+          <td><a href="https://arxiv.org/abs/2303.07345" target="_blank"><em>Erasing Concepts from Diffusion Models</em>, Gandikota et al., 2023</a></td>
           <td>Retained</td>
         </tr>
         <tr>
           <td><strong>CA</strong></td>
           <td>Concept Ablation</td>
-          <td>Forget target concepts by ablating their model representations</td>
-          <td><a href="https://arxiv.org/abs/2303.13516" target="_blank">Kumari et al., 2023</a></td>
+          <td>Maps the target concept distribution to an anchor concept while preserving closely related concepts</td>
+          <td><a href="https://arxiv.org/abs/2303.13516" target="_blank"><em>Ablating Concepts in Text-to-Image Diffusion Models</em>, Kumari et al., 2023</a></td>
           <td>Retained</td>
         </tr>
         <tr>
           <td><strong>FMN</strong></td>
           <td>Forget-Me-Not</td>
-          <td>Fine-mapping / minimal-edit style baseline for targeted forgetting</td>
-          <td>Zhang et al., 2023</td>
+          <td>Efficient targeted removal of identities, objects, or styles while retaining unrelated generation capability</td>
+          <td><a href="https://arxiv.org/abs/2303.17591" target="_blank"><em>Forget-Me-Not: Learning to Forget in Text-to-Image Diffusion Models</em>, Zhang et al., 2023</a></td>
           <td>Retained</td>
         </tr>
         <tr>
           <td><strong>FADE</strong></td>
-          <td>Fast Adaptive Diffusion Erasure</td>
-          <td>Updated baseline introduced in the 2025 materials; code available</td>
-          <td><a href="https://arxiv.org/abs/2503.19783" target="_blank">Thakral et al., 2025</a> · <a href="https://github.com/IAB-IITJ/FADE" target="_blank">Code</a></td>
+          <td>Fine-Grained Attenuation for Diffusion Erasure</td>
+          <td>Adjacency-aware concept unlearning using a concept neighborhood and mesh modules</td>
+          <td><a href="https://arxiv.org/abs/2503.19783" target="_blank"><em>Fine-Grained Erasure in Text-to-Image Diffusion-based Foundation Models</em>, Thakral et al., 2025</a> · <a href="https://github.com/IAB-IITJ/FADE" target="_blank">Code</a></td>
           <td>Retained</td>
         </tr>
       </tbody>

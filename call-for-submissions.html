@@ -53,7 +53,31 @@ nav a.prev-year{color:var(--muted);font-size:.85rem}
 .link-btn:hover{background:#dbe7ff;text-decoration:none}
 .link-btn.green{background:#e6f7f0;color:var(--good);border-color:rgba(15,138,95,.2)}
 @media (max-width:980px){.hero-grid,.grid-3,.grid-2{grid-template-columns:1fr}.topbar{position:static}nav{justify-content:flex-start}.logo-row{justify-content:flex-start}}
+
+.challenge-notice{
+  margin:14px 0 0;padding:10px 14px;border:1px solid #b9d5bf;background:#f3faf4;
+  color:#254d2d;font-size:.94rem;line-height:1.5
+}
+.challenge-notice strong{font-weight:700}
+.challenge-notice time{white-space:nowrap}
+.mjx-container{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.formula-box mjx-container{font-size:1.05em;margin:.2em 0!important}
+@media (max-width:600px){.challenge-notice{font-size:.9rem;padding:9px 11px}}
+
 </style>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']],
+    processEscapes: true
+  },
+  chtml: { scale: 0.98 }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
 </head>
 <body>
 <div class="container">
@@ -85,19 +109,23 @@ nav a.prev-year{color:var(--muted);font-size:.85rem}
     <a href="faq.html" class="">FAQ</a>
     <a href="https://shreyanshhub.github.io/GENMU-/" target="_blank" class="prev-year">Genμ 2025 ↗</a>
   </nav>
+  <div class="challenge-notice" role="status" aria-label="Challenge status">
+    <strong>Challenge open.</strong> Final submission deadline: <time datetime="2026-07-01">1 July 2026</time>. Evaluation and results declaration: <time datetime="2026-07-07">7 July 2026</time>.
+  </div>
+
 
 <section class="hero">
   <div class="hero-grid">
     <div>
-      <span class="chip">Call for submissions</span>
+      <span class="chip">Challenge open · Call for submissions</span>
       <h2>How the 2026 challenge is structured</h2>
       <p>Teams can work on the Face Unlearning Track, the Speech Unlearning Track, the legacy concept benchmark, or all three. The challenge is built around forgetting the target without damaging the surrounding capability of the generator.</p>
-      <div class="callout">Top-performing teams may be invited to co-author a research paper with the organizing team, provided their method surpasses the published baselines. <a href="https://kaggle.com/competitions/gen-challenge-u-me-workshop-iccv-25" target="_blank">Submit on Kaggle ↗</a></div>
+      <div class="callout">The challenge is open. Final submissions are due <strong>1 July 2026</strong>; evaluation and results declaration are scheduled for <strong>7 July 2026</strong>. Top-performing teams may be invited to co-author a research paper with the organizing team, provided their method surpasses the published baselines. <a href="https://kaggle.com/competitions/gen-challenge-u-me-workshop-iccv-25" target="_blank">Submit on Kaggle ↗</a></div>
     </div>
     <div class="hero-card">
-      <div class="stat"><b>Submission scope</b><span>One or more tracks are welcome — submit to whichever tracks suit your method.</span></div>
-      <div class="stat"><b>Primary deliverable</b><span>A model or method that meets the track-specific evaluation protocol.</span></div>
-      <div class="stat"><b>Core promise</b><span>Forget identities, keep utility.</span></div>
+      <div class="stat"><b>Status</b><span>Challenge open — submissions are being accepted now.</span></div>
+      <div class="stat"><b>Final submission</b><span><time datetime="2026-07-01">1 July 2026</time></span></div>
+      <div class="stat"><b>Evaluation &amp; declaration</b><span><time datetime="2026-07-07">7 July 2026</time></span></div>
     </div>
   </div>
 </section>
