@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Genμ 2.0 (2026)</title>
+<title>Genμ 2.0 (2026) — Multimodal Identity Unlearning Challenge @ ECCV 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&display=swap" rel=stylesheet>
 <style>
 :root{
@@ -42,71 +42,54 @@ a:hover{text-decoration:underline}
 .brandtext p{margin:2px 0 0;color:var(--muted);font-size:.95rem}
 .logo-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
 .logo-row img{height:44px;width:auto;object-fit:contain}
-nav{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end}
-nav a{
-    color:var(--text);font-weight:600;font-size:.95rem;padding:8px 12px;border-radius:999px;
-}
+nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+nav a{color:var(--text);font-weight:600;font-size:.95rem;padding:8px 12px;border-radius:999px;}
 nav a:hover, nav a.active{background:var(--accent);text-decoration:none}
-.hero{
-    margin-top:18px;padding:28px;border-radius:30px;background:linear-gradient(135deg,#ffffff, #f6f9ff 55%, #eef3ff);
-    border:1px solid var(--line);box-shadow:var(--shadow)
-}
+nav a.prev-year{color:var(--muted);font-size:.85rem}
+.hero{margin-top:18px;padding:28px;border-radius:30px;background:linear-gradient(135deg,#ffffff, #f6f9ff 55%, #eef3ff);border:1px solid var(--line);box-shadow:var(--shadow)}
 .hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:20px;align-items:stretch}
-.chip{
-    display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;
-    background:rgba(47,111,237,.1);color:var(--brand);font-weight:700;font-size:.85rem
-}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:rgba(47,111,237,.1);color:var(--brand);font-weight:700;font-size:.85rem}
 .hero h2{font-size:clamp(2rem, 4vw, 3.6rem);line-height:1.05;margin:14px 0 14px}
 .hero p{font-size:1.06rem;color:var(--muted);margin:0 0 14px}
-.hero-card{
-    background:rgba(255,255,255,.8);border:1px solid var(--line);border-radius:24px;padding:18px;box-shadow:var(--shadow)
-}
+.hero-card{background:rgba(255,255,255,.8);border:1px solid var(--line);border-radius:24px;padding:18px;box-shadow:var(--shadow)}
 .hero-card .stat{padding:14px 0;border-bottom:1px solid var(--line)}
 .hero-card .stat:last-child{border-bottom:none}
 .hero-card .stat b{display:block;font-size:1.15rem;margin-bottom:4px}
 .hero-card .stat span{color:var(--muted);font-size:.96rem}
-.section{margin-top:22px}
+.section{margin-top:28px}
 .section h3{font-size:1.6rem;margin:0 0 10px}
 .section .lead{color:var(--muted);margin:0 0 16px}
 .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.card{
-    background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:20px;box-shadow:var(--shadow)
-}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:20px;box-shadow:var(--shadow)}
 .card h4{margin:0 0 8px;font-size:1.15rem}
 .card p{margin:0;color:var(--muted)}
 .card ul{margin:12px 0 0 20px;color:var(--text)}
-.badge{
-    display:inline-flex;align-items:center;padding:5px 10px;border-radius:999px;background:var(--accent);
-    color:var(--brand);font-size:.8rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase
-}
-.meta{color:var(--muted);font-size:.95rem}
+.card ul li{margin-bottom:4px}
+.badge{display:inline-flex;align-items:center;padding:5px 10px;border-radius:999px;background:var(--accent);color:var(--brand);font-size:.8rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.badge.green{background:#e6f7f0;color:var(--good)}
+.badge.purple{background:#f0ecff;color:var(--brand-2)}
 .timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.timeline .card{position:relative}
 .timeline .card .num{padding-left:0}
 .table-wrap{overflow:auto;border-radius:20px;border:1px solid var(--line);background:white;box-shadow:var(--shadow)}
-table{width:100%;border-collapse:collapse;min-width:760px}
+table{width:100%;border-collapse:collapse;min-width:600px}
 th,td{padding:14px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
 th{background:#eff4ff;font-size:.93rem}
 tr:last-child td{border-bottom:none}
-.small{font-size:.93rem;color:var(--muted)}
-.footer{
-    margin:28px 0 10px;color:var(--muted);font-size:.94rem;padding-top:16px;border-top:1px solid rgba(0,0,0,.08)
-}
-.person-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.person{
-    text-align:center;background:white;border:1px solid var(--line);border-radius:24px;padding:18px;box-shadow:var(--shadow)
-}
-.person img{width:132px;height:132px;border-radius:50%;object-fit:cover;margin:0 auto 12px;display:block;border:4px solid #eef3ff}
-.person h4{margin:4px 0 4px}
-.person p{margin:0;color:var(--muted)}
-.faq-item{padding:16px 0;border-bottom:1px solid var(--line)}
-.faq-item h4{margin:0 0 6px}
-.callout{
-    margin-top:18px;padding:16px 18px;border-radius:20px;background:#fff7e8;border:1px solid #f0d39a;color:#805400
-}
+.footer{margin:28px 0 10px;color:var(--muted);font-size:.94rem;padding-top:16px;border-top:1px solid rgba(0,0,0,.08)}
+.callout{margin-top:18px;padding:16px 18px;border-radius:20px;background:#fff7e8;border:1px solid #f0d39a;color:#805400}
+.callout a{color:#805400;text-decoration:underline}
+.dates-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.date-card{background:white;border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:var(--shadow);text-align:center}
+.date-card .d-label{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--brand);margin-bottom:6px}
+.date-card .d-date{font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:4px}
+.date-card .d-desc{font-size:.87rem;color:var(--muted)}
+.link-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.link-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:999px;background:var(--accent);color:var(--brand);font-weight:700;font-size:.9rem;border:1px solid rgba(47,111,237,.2)}
+.link-btn:hover{background:#dbe7ff;text-decoration:none}
+.link-btn.green{background:#e6f7f0;color:var(--good);border-color:rgba(15,138,95,.2)}
 @media (max-width: 980px){
-    .hero-grid,.grid-3,.grid-2,.timeline,.person-grid{grid-template-columns:1fr}
+    .hero-grid,.grid-3,.grid-2,.timeline,.dates-grid{grid-template-columns:1fr}
     .topbar{position:static}
     nav{justify-content:flex-start}
     .logo-row{justify-content:flex-start}
@@ -119,12 +102,19 @@ tr:last-child td{border-bottom:none}
     <div class="brandbox">
       <div class="brandmark">Gμ</div>
       <div class="brandtext">
-        <div class="kicker">Multimodal unlearning</div>
+        <div class="kicker">Multimodal unlearning · ECCV 2026</div>
         <h1>Genμ 2.0</h1>
-        <p>Genμ 2.0 challenge website</p>
+        <p>U&amp;ME Workshop @ ECCV 2026</p>
       </div>
     </div>
-    <div class="logo-row"><img src="second-logo.png" alt="Challenge partner logo"></div>
+    <div class="logo-row">
+      <a href="https://shreyanshhub.github.io/GENMU-/" target="_blank" title="Genμ 2025 (ICCV)">
+        <img src="https://shreyanshhub.github.io/GENMU-/genmu-logo.png" alt="GenMU 2025 Logo">
+      </a>
+      <a href="https://sites.google.com/view/u-and-me-workshop/" target="_blank" title="U&ME Workshop">
+        <img src="second-logo.png" alt="U&ME Workshop logo">
+      </a>
+    </div>
   </header>
   <nav style="margin:16px 2px 0;">
     <a href="index.html" class="active">Home</a>
@@ -132,96 +122,144 @@ tr:last-child td{border-bottom:none}
     <a href="baselines.html" class="">Baselines</a>
     <a href="organizers.html" class="">Organizers</a>
     <a href="leaderboard.html" class="">Leaderboard</a>
-    <a href="call-for-entries.html" class="">Call for Entries</a>
+    <a href="call-for-submissions.html" class="">Call for Submissions</a>
     <a href="faq.html" class="">FAQ</a>
+    <a href="https://shreyanshhub.github.io/GENMU-/" target="_blank" class="prev-year">Genμ 2025 ↗</a>
   </nav>
-  
+
 <section class="hero">
   <div class="hero-grid">
     <div>
-      <span class="chip">Genμ 2.0 • 2026 edition</span>
+      <span class="chip">Genμ 2.0 · 2026 edition · ECCV 2026</span>
       <h2>Multimodal Identity Unlearning Challenge</h2>
-      <p>The 2026 update expands the original Genμ concept-unlearning benchmark into a broader privacy-preserving suite. The legacy challenge remains as Task 3, while two new tracks focus on forgetting identities in face generation and speaker generation without breaking nearby identities, attributes, or speech style.</p>
-      <div class="callout">Three tracks, four tasks, one theme: remove a specific identity or concept while preserving everything around it.</div>
+      <p>The 2026 update expands the original Genμ concept-unlearning benchmark into a broader privacy-preserving suite co-located with the U&amp;ME Workshop at ECCV 2026. Three tracks test whether generative models can forget a specific identity or concept without damaging everything around it.</p>
+      <div class="callout">Three tracks, four tasks, one theme: remove a specific identity or concept while preserving everything around it. <a href="https://kaggle.com/competitions/gen-challenge-u-me-workshop-iccv-25" target="_blank">View on Kaggle ↗</a></div>
+      <div class="link-row">
+        <a class="link-btn" href="call-for-submissions.html">Call for Submissions</a>
+        <a class="link-btn green" href="https://kaggle.com/competitions/gen-challenge-u-me-workshop-iccv-25" target="_blank">Kaggle Challenge ↗</a>
+        <a class="link-btn" href="https://shreyanshhub.github.io/GENMU-/" target="_blank">Genμ 2025 ↗</a>
+      </div>
     </div>
     <div class="hero-card">
-      <div class="stat"><b>Task 3</b><span>Original concept unlearning from the earlier Genμ challenge, retained unchanged.</span></div>
-      <div class="stat"><b>Track A</b><span>Face identity unlearning with Arc2Face, CelebA, FFHQ, and ArcFace-based evaluation.</span></div>
-      <div class="stat"><b>Track B</b><span>Speaker identity unlearning with prosody and attribute preservation for TTS / cloning models.</span></div>
+      <div class="stat"><b>Task 1 — Face Unlearning Track</b><span>Face identity unlearning with Arc2Face, CelebA, FFHQ, and ArcFace-based evaluation.</span></div>
+      <div class="stat"><b>Task 2 — Speech Unlearning Track</b><span>Speaker identity unlearning with prosody and attribute preservation for TTS / voice-cloning models.</span></div>
+      <div class="stat"><b>Task 3 — Concept Unlearning</b><span>Original concept unlearning from the earlier Genμ challenge, retained unchanged.</span></div>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <h3>Challenge map</h3>
-  <p class="lead">Each track is designed to test whether a model can forget the target while keeping the surrounding structure intact.</p>
+  <h3>Challenge timeline</h3>
+  <p class="lead">Key dates for the 2026 edition — plan your submissions around these milestones.</p>
+  <div class="dates-grid">
+    <div class="date-card">
+      <div class="d-label">Registration opens</div>
+      <div class="d-date">TBD 2026</div>
+      <div class="d-desc">Complete the official registration form to join the challenge.</div>
+    </div>
+    <div class="date-card">
+      <div class="d-label">Submission opens</div>
+      <div class="d-date">TBD 2026</div>
+      <div class="d-desc">Upload results and track progress on the Kaggle leaderboard.</div>
+    </div>
+    <div class="date-card">
+      <div class="d-label">Final model upload</div>
+      <div class="d-date">TBD 2026</div>
+      <div class="d-desc">Submit final model checkpoints for offline evaluation.</div>
+    </div>
+    <div class="date-card">
+      <div class="d-label">Winners announced</div>
+      <div class="d-date">ECCV 2026</div>
+      <div class="d-desc">Results presented at the U&amp;ME Workshop at ECCV 2026.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h3>Challenge tracks</h3>
+  <p class="lead">Each track tests whether a model can forget the target while keeping the surrounding structure intact.</p>
   <div class="grid-3">
     <div class="card">
-      <span class="badge">Legacy task 3</span>
-      <h4>Concept unlearning</h4>
-      <p>Keep the original benchmark as-is for the 2026 edition.</p>
+      <span class="badge green">Task 1 · New</span>
+      <h4>Face Unlearning Track</h4>
+      <p>Forget a target face identity while preserving neighboring identities and facial attributes.</p>
       <ul>
-        <li>Base model: Stable Diffusion v1.4</li>
-        <li>Core methods: ESD, CA, FMN, FADE</li>
-        <li>Primary focus: erasing, retention, robustness</li>
-      </ul>
-    </div>
-    <div class="card">
-      <span class="badge">Track A</span>
-      <h4>Face identity unlearning</h4>
-      <p>Forget a target face identity while preserving neighbors and facial attributes.</p>
-      <ul>
-        <li>Datasets: CelebA and FFHQ</li>
-        <li>Base model: Arc2Face</li>
+        <li>Datasets: <a href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html" target="_blank">CelebA</a> and <a href="https://github.com/NVlabs/ffhq-dataset" target="_blank">FFHQ</a></li>
+        <li>Base model: <a href="https://huggingface.co/FoivosPar/Arc2Face" target="_blank">Arc2Face</a></li>
         <li>Metrics: forgetting, retention, leakage, geometry</li>
       </ul>
+      <div class="link-row">
+        <a class="link-btn" href="baselines.html#track-a">Release setup ↓</a>
+        <a class="link-btn green" href="#">Download packet ↓</a>
+      </div>
     </div>
     <div class="card">
-      <span class="badge">Track B</span>
-      <h4>Speaker identity unlearning</h4>
-      <p>Remove a target speaker while keeping prosody, emotion, accent, and quality.</p>
+      <span class="badge purple">Task 2 · New</span>
+      <h4>Speech Unlearning Track</h4>
+      <p>Remove a target speaker while keeping prosody, emotion, accent, and overall speech quality.</p>
       <ul>
-        <li>Model family: pretrained StyleTTS2 </li>
-        <li>Evaluation: speaker, prosody, leakage, naturalness</li>
-        <li>Focus: disentangling identity from style</li>
-          <li>Metrics: FSA, RSA, Spk Similarity, spk-ZRF</li>
+        <li>Base model: <a href="https://github.com/yl4579/StyleTTS2" target="_blank">StyleTTS2</a></li>
+        <li>Evaluation: speaker similarity, prosody, leakage, naturalness</li>
+        <li>Metrics: FSA, RSA, Spk-Similarity, spk-ZRF</li>
+      </ul>
+      <div class="link-row">
+        <a class="link-btn" href="baselines.html#track-b">Release setup ↓</a>
+        <a class="link-btn green" href="#">Download packet ↓</a>
+      </div>
+    </div>
+    <div class="card">
+      <span class="badge">Task 3 · Legacy</span>
+      <h4>Concept Unlearning</h4>
+      <p>The original benchmark: erase a visual concept while keeping retention, adjacent concepts, and robustness.</p>
+      <ul>
+        <li>Base model: <a href="https://huggingface.co/CompVis/stable-diffusion-v1-4" target="_blank">Stable Diffusion v1.4</a></li>
+        <li>Baselines: ESD, CA, FMN, FADE</li>
+        <li>Primary metric: ERR score</li>
+      </ul>
+      <div class="link-row">
+        <a class="link-btn" href="baselines.html">Baselines ↓</a>
+        <a class="link-btn green" href="https://kaggle.com/competitions/gen-challenge-u-me-workshop-iccv-25" target="_blank">Kaggle ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h3>New sub-tasks in 2026</h3>
+  <div class="timeline">
+    <div class="card"><div class="num"><span class="badge green" style="margin-bottom:8px;display:inline-flex">A1</span><br><strong>Similar identity unlearning</strong> with retention of the nearest identities in ArcFace embedding space.</div></div>
+    <div class="card"><div class="num"><span class="badge green" style="margin-bottom:8px;display:inline-flex">A2</span><br><strong>Identity with attribute preservation</strong> — forget the face but keep attributes such as sunglasses, smile, or beard.</div></div>
+    <div class="card"><div class="num"><span class="badge purple" style="margin-bottom:8px;display:inline-flex">B1</span><br><strong>Speaker unlearning with prosody</strong> — remove the voice identity while preserving pitch, energy, and rhythm.</div></div>
+    <div class="card"><div class="num"><span class="badge purple" style="margin-bottom:8px;display:inline-flex">B2</span><br><strong>Speech attribute preservation</strong> — forget speaker identity while keeping accent, emotion, and style.</div></div>
+  </div>
+</section>
+
+<section class="section">
+  <h3>Useful links</h3>
+  <div class="grid-2">
+    <div class="card">
+      <h4>Challenge resources</h4>
+      <ul>
+        <li><a href="https://kaggle.com/competitions/gen-challenge-u-me-workshop-iccv-25" target="_blank">Kaggle challenge page</a></li>
+        <li><a href="https://sites.google.com/view/u-and-me-workshop/" target="_blank">U&amp;ME Workshop website</a></li>
+        <li><a href="https://shreyanshhub.github.io/GENMU-/" target="_blank">Genμ 2025 challenge (ICCV)</a></li>
+        <li><a href="https://colab.research.google.com/drive/1_f6AIjZ5IYeJuVSl27upzSePpTd6-y3U?usp=sharing" target="_blank">Colab evaluation script</a></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Datasets &amp; models</h4>
+      <ul>
+        <li><a href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html" target="_blank">CelebA dataset</a></li>
+        <li><a href="https://github.com/NVlabs/ffhq-dataset" target="_blank">FFHQ dataset</a></li>
+        <li><a href="https://huggingface.co/FoivosPar/Arc2Face" target="_blank">Arc2Face (HuggingFace)</a></li>
+        <li><a href="https://huggingface.co/CompVis/stable-diffusion-v1-4" target="_blank">Stable Diffusion v1.4</a></li>
+        <li><a href="https://github.com/yl4579/StyleTTS2" target="_blank">StyleTTS2 (GitHub)</a></li>
       </ul>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <h3>New tasks in 2026</h3>
-  <div class="timeline">
-    <div class="card"><div class="num"><strong>A1.</strong> Similar identity unlearning with retention of the nearest identities in ArcFace space.</div></div>
-    <div class="card"><div class="num"><strong>A2.</strong> Identity unlearning with attribute preservation such as sunglasses, smile, beard, or hairstyle.</div></div>
-    <div class="card"><div class="num"><strong>B1.</strong> Speaker identity unlearning with prosody and style preservation across diverse speakers.</div></div>
-    <div class="card"><div class="num"><strong>B2.</strong> Speaker identity unlearning with speech attribute preservation for accent, emotion, and rhythm.</div></div>
-  </div>
-</section>
-
-<section class="section">
-  <h3>Datasets and models</h3>
-  <div class="grid-2">
-    <div class="card">
-      <h4>Face track</h4>
-      <p>Target identities are sampled from CelebA and FFHQ. The doc specifies Arc2Face as the starting model. ArcFace embeddings are used for similarity, leakage, and retention checks.</p>
-    </div>
-    <div class="card">
-      <h4>Speech track</h4>
-      <p>The speech track uses a pretrained text-to-speech or voice cloning model as the base system. The release can include target-speaker samples, retained-speaker samples, and attribute labels for accent, emotion, rhythm, and style.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <h3>What stays from the earlier challenge</h3>
-  <div class="card">
-    <p>The original concept-unlearning benchmark stays live as Task 3 so teams can compare new identity-centric methods against the legacy setting. That gives the 2026 edition a direct bridge from concept forgetting to identity forgetting.</p>
-  </div>
-</section>
-
-  <div class="footer">Updated for the 2026 edition. Legacy concept unlearning continues as Task 3, alongside two new identity-centric tracks in face and speech.</div>
+  <div class="footer">Genμ 2.0 · 2026 edition · U&amp;ME Workshop @ ECCV 2026. Legacy concept unlearning continues as Task 3, alongside two new identity-centric tracks. Contact: <a href="mailto:genmu.challenge.2025@gmail.com">genmu.challenge.2025@gmail.com</a></div>
 </div>
 </body>
 </html>

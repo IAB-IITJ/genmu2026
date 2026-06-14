@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Genμ 2.0 (2026) — Leaderboard</title>
+<title>Genμ 2.0 (2026) — Call for Submissions</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&display=swap" rel=stylesheet>
 <style>
 :root{--bg:#f6f8fc;--panel:#ffffff;--text:#162033;--muted:#5f6b7a;--line:#dbe4f0;--brand:#2f6fed;--brand-2:#6b4eff;--accent:#e8efff;--good:#0f8a5f;--shadow:0 10px 30px rgba(18,36,76,.08);}
@@ -36,19 +36,23 @@ nav a.prev-year{color:var(--muted);font-size:.85rem}
 .section{margin-top:28px}
 .section h3{font-size:1.5rem;font-weight:800;letter-spacing:.02em;text-transform:uppercase;margin:0 0 10px}
 .section .lead{color:var(--muted);margin:0 0 16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:var(--shadow)}
 .card h4{margin:0 0 8px;font-size:1.1rem;font-weight:700}
 .card p{margin:0;color:var(--muted)}
-.table-wrap{overflow:auto;border-radius:20px;border:1px solid var(--line);background:white;box-shadow:var(--shadow)}
-table{width:100%;border-collapse:collapse;min-width:760px}
-th,td{padding:14px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-th{background:#eff4ff;font-size:.93rem;font-weight:700}
-tr:last-child td{border-bottom:none}
+.card ul{margin:10px 0 0 18px;color:var(--text)}
+.card ul li{margin-bottom:5px}
+.badge{display:inline-flex;align-items:center;padding:5px 10px;border-radius:999px;background:var(--accent);color:var(--brand);font-size:.8rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.badge.green{background:#e6f7f0;color:var(--good)}
+.badge.purple{background:#f0ecff;color:var(--brand-2)}
+.callout{margin-top:18px;padding:16px 18px;border-radius:20px;background:#fff7e8;border:1px solid #f0d39a;color:#805400}
+.callout a{color:#805400;text-decoration:underline}
 .footer{margin:28px 0 10px;color:var(--muted);font-size:.94rem;padding-top:16px;border-top:1px solid rgba(0,0,0,.08)}
 .link-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:999px;background:var(--accent);color:var(--brand);font-weight:700;font-size:.9rem;border:1px solid rgba(47,111,237,.2);margin-top:12px}
 .link-btn:hover{background:#dbe7ff;text-decoration:none}
 .link-btn.green{background:#e6f7f0;color:var(--good);border-color:rgba(15,138,95,.2)}
-@media (max-width:980px){.hero-grid{grid-template-columns:1fr}.topbar{position:static}nav{justify-content:flex-start}.logo-row{justify-content:flex-start}}
+@media (max-width:980px){.hero-grid,.grid-3,.grid-2{grid-template-columns:1fr}.topbar{position:static}nav{justify-content:flex-start}.logo-row{justify-content:flex-start}}
 </style>
 </head>
 <body>
@@ -59,7 +63,7 @@ tr:last-child td{border-bottom:none}
       <div class="brandtext">
         <div class="kicker">Multimodal unlearning · ECCV 2026</div>
         <h1>Genμ 2.0</h1>
-        <p>Competition standings</p>
+        <p>Call for submissions</p>
       </div>
     </div>
     <div class="logo-row">
@@ -76,8 +80,8 @@ tr:last-child td{border-bottom:none}
     <a href="evaluation.html" class="">Evaluation</a>
     <a href="baselines.html" class="">Baselines</a>
     <a href="organizers.html" class="">Organizers</a>
-    <a href="leaderboard.html" class="active">Leaderboard</a>
-    <a href="call-for-submissions.html" class="">Call for Submissions</a>
+    <a href="leaderboard.html" class="">Leaderboard</a>
+    <a href="call-for-submissions.html" class="active">Call for Submissions</a>
     <a href="faq.html" class="">FAQ</a>
     <a href="https://shreyanshhub.github.io/GENMU-/" target="_blank" class="prev-year">Genμ 2025 ↗</a>
   </nav>
@@ -85,65 +89,79 @@ tr:last-child td{border-bottom:none}
 <section class="hero">
   <div class="hero-grid">
     <div>
-      <span class="chip">Leaderboard</span>
-      <h2>COMPETITION STANDINGS — 2026 EDITION</h2>
-      <p>The 2026 leaderboard tracks submissions across three tracks. Per-track rankings are shown separately, with an overall challenge view once submissions open. Live rankings are hosted on Kaggle.</p>
-      <a class="link-btn green" href="https://kaggle.com/competitions/gen-challenge-u-me-workshop-iccv-25" target="_blank">View live Kaggle leaderboard ↗</a>
+      <span class="chip">Call for submissions</span>
+      <h2>How the 2026 challenge is structured</h2>
+      <p>Teams can work on the Face Unlearning Track, the Speech Unlearning Track, the legacy concept benchmark, or all three. The challenge is built around forgetting the target without damaging the surrounding capability of the generator.</p>
+      <div class="callout">Top-performing teams may be invited to co-author a research paper with the organizing team, provided their method surpasses the published baselines. <a href="https://kaggle.com/competitions/gen-challenge-u-me-workshop-iccv-25" target="_blank">Submit on Kaggle ↗</a></div>
     </div>
     <div class="hero-card">
-      <div class="stat"><b>Status</b><span>Leaderboard ready — awaiting 2026 submission window to open.</span></div>
-      <div class="stat"><b>Tracks</b><span>Task 1 (Face Unlearning), Task 2 (Speech Unlearning), Task 3 (Concept Unlearning).</span></div>
-      <div class="stat"><b>Live ranking</b><span>Kaggle leaderboard updates in real time on CSV upload.</span></div>
+      <div class="stat"><b>Submission scope</b><span>One or more tracks are welcome — submit to whichever tracks suit your method.</span></div>
+      <div class="stat"><b>Primary deliverable</b><span>A model or method that meets the track-specific evaluation protocol.</span></div>
+      <div class="stat"><b>Core promise</b><span>Forget identities, keep utility.</span></div>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <h3>Current status</h3>
+  <h3>Track summary</h3>
+  <div class="grid-3">
+    <div class="card">
+      <span class="badge green" style="margin-bottom:8px;display:inline-flex">Task 1 · New</span>
+      <h4>Face Unlearning Track</h4>
+      <p>Face identity unlearning using CelebA / FFHQ samples, Arc2Face, and ArcFace-based evaluation. Sub-tasks A1 and A2.</p>
+    </div>
+    <div class="card">
+      <span class="badge purple" style="margin-bottom:8px;display:inline-flex">Task 2 · New</span>
+      <h4>Speech Unlearning Track</h4>
+      <p>Speaker identity unlearning with prosody and attribute preservation for TTS or voice-cloning systems. Sub-tasks B1 and B2.</p>
+    </div>
+    <div class="card">
+      <span class="badge" style="margin-bottom:8px;display:inline-flex">Task 3 · Legacy</span>
+      <h4>Concept Unlearning</h4>
+      <p>Legacy concept unlearning on Stable Diffusion v1.4 with the original erasing-retention-robustness (ERR) setup.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h3>Recommended submission shape</h3>
+  <div class="grid-2">
+    <div class="card">
+      <h4>Method report</h4>
+      <ul>
+        <li>What is being forgotten and why that formulation was chosen</li>
+        <li>How retention is protected during unlearning</li>
+        <li>What data or prompts are used in the unlearning procedure</li>
+        <li>How the method avoids leakage to adjacent identities or concepts</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Artifacts</h4>
+      <ul>
+        <li>Unlearned model checkpoint or inference wrapper</li>
+        <li>Short technical write-up (2–4 pages recommended)</li>
+        <li>Optional: ablations and qualitative output samples</li>
+        <li>Track-specific evaluation logs in the required format</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h3>Submission links</h3>
   <div class="card">
-    <p>No submissions have been received yet for the 2026 edition. Once the submission window opens, per-track results will appear below and on the <a href="https://kaggle.com/competitions/gen-challenge-u-me-workshop-iccv-25" target="_blank">Kaggle challenge page</a>. The evaluation server will be connected before the submission deadline.</p>
+    <p>Submit your evaluation CSV and final model via the links below. The Kaggle leaderboard updates in real time based on your uploaded results.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px">
+      <a class="link-btn green" href="https://kaggle.com/competitions/gen-challenge-u-me-workshop-iccv-25" target="_blank">Kaggle challenge page ↗</a>
+      <a class="link-btn" href="https://colab.research.google.com/drive/1_f6AIjZ5IYeJuVSl27upzSePpTd6-y3U?usp=sharing" target="_blank">Colab evaluation script ↗</a>
+    </div>
   </div>
 </section>
 
 <section class="section">
-  <h3>Leaderboard — Task 1: Face Unlearning Track</h3>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr><th>Rank</th><th>Team</th><th>Forgetting Score ↑</th><th>Retention Score ↑</th><th>Leakage (FAR@1e-3) ↓</th><th>Geometry Preservation ↑</th></tr>
-      </thead>
-      <tbody>
-        <tr><td colspan="6" style="text-align:center;color:#5f6b7a;padding:24px">Submissions open soon — check back when the window opens.</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section class="section">
-  <h3>Leaderboard — Task 2: Speech Unlearning Track</h3>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr><th>Rank</th><th>Team</th><th>FSA ↑</th><th>RSA ↑</th><th>PPS ↑</th><th>WER ↓</th><th>spk-ZRF ↑</th></tr>
-      </thead>
-      <tbody>
-        <tr><td colspan="7" style="text-align:center;color:#5f6b7a;padding:24px">Submissions open soon — check back when the window opens.</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section class="section">
-  <h3>Leaderboard — Task 3: Concept Unlearning</h3>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr><th>Rank</th><th>Team</th><th>ERR Score ↑</th><th>Forgetting (Ā_fgt) ↑</th><th>Retention (Ā_ret) ↑</th><th>Robustness (Ā_adv) ↑</th><th>Weight-Δ ↓</th></tr>
-      </thead>
-      <tbody>
-        <tr><td colspan="7" style="text-align:center;color:#5f6b7a;padding:24px">Submissions open soon — check back when the window opens.</td></tr>
-      </tbody>
-    </table>
+  <h3>Notes for participants</h3>
+  <div class="card">
+    <p>The face and speech tracks are intentionally more entangled than ordinary concept erasure. Expect similarity preservation, leakage checks, and attribute retention to matter as much as the forgetting score itself. Methods that aggressively erase the target at the cost of collateral forgetting will score poorly on the retention and geometry metrics.</p>
   </div>
 </section>
 
