@@ -1,8 +1,8 @@
 // Add the three published Google Form URLs below. Every form button on the site reads this file.
 window.GENMU_SUBMISSION_FORMS = {
-  face: "",
-  speech: "",
-  concept: ""
+  face: "https://docs.google.com/forms/d/e/1FAIpQLSeGU0Eco3NgnwtYDFDNTH8uae_pZJvr_cufoWDX53NYmxZaEQ/viewform?usp=publish-editor",
+  speech: "https://docs.google.com/forms/d/e/1FAIpQLSeGU0Eco3NgnwtYDFDNTH8uae_pZJvr_cufoWDX53NYmxZaEQ/viewform?usp=publish-editor",
+  concept: "https://docs.google.com/forms/d/e/1FAIpQLSeGU0Eco3NgnwtYDFDNTH8uae_pZJvr_cufoWDX53NYmxZaEQ/viewform?usp=publish-editor"
 };
 
 document.addEventListener("DOMContentLoaded", () => {
