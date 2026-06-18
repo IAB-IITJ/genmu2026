@@ -6,7 +6,6 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Genμ 2.0 (2026) — Multimodal Identity Unlearning Challenge @ ECCV 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet"/><link href="styles.css" rel="stylesheet"/>
-
 <script>
 window.MathJax = {
   tex: {
@@ -30,7 +29,6 @@ window.MathJax = {
 <p>U&amp;ME Workshop @ ECCV 2026</p>
 </div>
 </div>
-
 </header><div class="header-row"><div class="logo-row">
 <a href="https://shreyanshhub.github.io/GENMU-/" rel="noopener noreferrer" target="_blank" title="Genμ 2025 (ICCV)">
 <img alt="GenMU 2025 Logo" src="genmu-logo.png"/>
@@ -48,101 +46,73 @@ window.MathJax = {
 <a class="" href="faq.html">FAQ</a>
 <a class="prev-year" href="https://shreyanshhub.github.io/GENMU-/" rel="noopener noreferrer" target="_blank">Genμ 2025 ↗</a>
 </nav></div>
-
-<div aria-label="Challenge status" class="challenge-notice" role="status">
-<strong>Challenge open.</strong> Final submission deadline: <time datetime="2026-07-01">1 July 2026</time>. Evaluation and results declaration: <time datetime="2026-07-07">7 July 2026</time>.
-  </div>
+<div aria-label="Challenge status" class="challenge-notice" role="status"><strong>Challenge open.</strong> Final submission deadline: <time datetime="2026-07-10">10 July 2026</time>. Evaluation and results declaration: <time datetime="2026-07-25">25 July 2026</time>.</div>
 <section class="hero">
 <div class="hero-grid">
 <div>
 <span class="chip">Challenge open · Genμ 2.0 · ECCV 2026</span>
 <h2>Multimodal Identity Unlearning Challenge</h2>
 <p>The 2026 update expands the original Genμ concept-unlearning benchmark into a broader privacy-preserving suite co-located with the U&amp;ME Workshop at ECCV 2026. Three tracks test whether generative models can forget a specific identity or concept without damaging everything around it.</p>
-<div class="callout">Three tracks, four tasks, one theme: remove a specific identity or concept while preserving everything around it. <a href="https://kaggle.com/competitions/gen-challenge-u-me-workshop-iccv-25" rel="noopener noreferrer" target="_blank">View on Kaggle ↗</a></div>
+<div class="callout"><strong>Submissions are collected through three track-specific Google Forms.</strong> Each entry must provide a shareable Google Drive link to the submitted weights, a GitHub repository containing the complete code, and clear instructions for reproducing and testing the method.</div>
 <div class="link-row">
-<a class="link-btn" href="call-for-submissions.html">Call for Submissions</a>
-<a class="link-btn green" href="https://kaggle.com/competitions/gen-challenge-u-me-workshop-iccv-25" rel="noopener noreferrer" target="_blank">Kaggle Challenge ↗</a>
-<a class="link-btn" href="https://shreyanshhub.github.io/GENMU-/" rel="noopener noreferrer" target="_blank">Genμ 2025 ↗</a>
+<a class="link-btn" href="call-for-submissions.html">Submission instructions</a>
+<a class="link-btn" href="evaluation.html#validation-splits">Validation identities</a>
+<a class="link-btn" href="leaderboard.html">Challenge leaderboard</a>
 </div>
 </div>
 <div class="hero-card">
-<div class="stat"><b>Task 1 — Face Unlearning Track</b><span>Face identity unlearning with Arc2Face, CelebA, FFHQ, and ArcFace-based evaluation.</span></div>
-<div class="stat"><b>Task 2 — Speech Unlearning Track</b><span>Speaker identity unlearning with prosody and attribute preservation for TTS / voice-cloning models.</span></div>
+<div class="stat"><b>Task 1 — Face Unlearning Track</b><span>Model-agnostic face identity unlearning on CelebA / FFHQ, evaluated with a common ArcFace-based protocol.</span></div>
+<div class="stat"><b>Task 2 — Speech Unlearning Track</b><span>Model-agnostic speaker identity unlearning on LibriTTS, with speaker, prosody, leakage, and intelligibility checks.</span></div>
 <div class="stat"><b>Task 3 — Concept Unlearning</b><span>Original concept unlearning from the earlier Genμ challenge, retained unchanged.</span></div>
 </div>
 </div>
 </section>
 <section class="section">
 <h3>Challenge timeline</h3>
-<p class="lead">Key dates for the 2026 edition — plan your submissions around these milestones.</p>
+<p class="lead">Key dates for the 2026 edition.</p>
 <div class="dates-grid">
-<div class="date-card">
-<div class="d-label">Challenge status</div>
-<div class="d-date">Open now</div>
-<div class="d-desc">Teams may submit to one or more challenge tracks.</div>
+<div class="date-card"><div class="d-label">Challenge status</div><div class="d-date">Open now</div><div class="d-desc">Teams may submit to one or more tracks.</div></div>
+<div class="date-card"><div class="d-label">Final submission deadline</div><div class="d-date"><time datetime="2026-07-10">10 July 2026</time></div><div class="d-desc">Submit the track form with weights, code, and complete testing instructions.</div></div>
+<div class="date-card"><div class="d-label">Evaluation &amp; results</div><div class="d-date"><time datetime="2026-07-25">25 July 2026</time></div><div class="d-desc">Organizers complete evaluation and declare the final results.</div></div>
+<div class="date-card"><div class="d-label">Leaderboard</div><div class="d-date">Updated during the challenge</div><div class="d-desc">Verified submissions are added to the website leaderboard as evaluation progresses.</div></div>
 </div>
-<div class="date-card">
-<div class="d-label">Final submission deadline</div>
-<div class="d-date"><time datetime="2026-07-01">1 July 2026</time></div>
-<div class="d-desc">Upload the final evaluation CSV and model artifacts.</div>
+</section><section class="section">
+<h3>How to submit</h3>
+<p class="lead">Use the Google Form for the selected track. A separate form is used for each track.</p>
+<div class="grid-3">
+<div class="card"><h4>1. Weights</h4><p>Upload the final unlearned weights or checkpoint to Google Drive and enable access for the organizers.</p></div>
+<div class="card"><h4>2. Complete code</h4><p>Provide a GitHub repository containing training/unlearning code, inference code, environment files, and the exact commit or release tag.</p></div>
+<div class="card"><h4>3. Testing instructions</h4><p>Document setup, commands, inputs, expected outputs, hardware requirements, and any track-specific preprocessing needed to reproduce the submission.</p></div>
 </div>
-<div class="date-card">
-<div class="d-label">Evaluation &amp; declaration</div>
-<div class="d-date"><time datetime="2026-07-07">7 July 2026</time></div>
-<div class="d-desc">Final submissions are evaluated and results are declared.</div>
-</div>
-<div class="date-card">
-<div class="d-label">Workshop presentation</div>
-<div class="d-date">ECCV 2026</div>
-<div class="d-desc">Challenge outcomes will be presented with the U&amp;ME Workshop.</div>
-</div>
-</div>
+<div class="link-row form-actions"><a aria-disabled="true" class="link-btn form-link" data-form-track="face" href="#">Face Track Google Form — link pending</a><a aria-disabled="true" class="link-btn form-link" data-form-track="speech" href="#">Speech Track Google Form — link pending</a><a aria-disabled="true" class="link-btn form-link" data-form-track="concept" href="#">Concept Track Google Form — link pending</a></div>
 </section>
 <section class="section">
 <h3>Challenge tracks</h3>
-<p class="lead">Each track tests whether a model can forget the target while keeping the surrounding structure intact.</p>
+<p class="lead">Face and speech participants may use any suitable generative model. Suggested checkpoints are starting points only; every submission must identify its exact model and checkpoint.</p>
 <div class="grid-3">
 <div class="card">
-<span class="badge green">Task 1 · New</span>
-<h4>Face Unlearning Track</h4>
+<span class="badge green">Task 1 · Face</span><h4>Face Unlearning Track</h4>
 <p>Forget a target face identity while preserving neighboring identities and facial attributes.</p>
 <ul>
-<li>Datasets: <a href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html" rel="noopener noreferrer" target="_blank">CelebA</a> and <a href="https://github.com/NVlabs/ffhq-dataset" rel="noopener noreferrer" target="_blank">FFHQ</a></li>
-<li>Base model: <a href="https://huggingface.co/FoivosPar/Arc2Face" rel="noopener noreferrer" target="_blank">Arc2Face</a></li>
-<li>Metrics: forgetting, retention, leakage, geometry</li>
+<li>Data: CelebA / FFHQ</li><li>Model choice: open</li>
+<li>Suggested checkpoints: <a href="https://huggingface.co/FoivosPar/Arc2Face" rel="noopener noreferrer" target="_blank">Arc2Face</a>, <a href="https://huggingface.co/InstantX/InstantID" rel="noopener noreferrer" target="_blank">InstantID</a>, <a href="https://huggingface.co/h94/IP-Adapter-FaceID" rel="noopener noreferrer" target="_blank">IP-Adapter-FaceID</a></li>
 </ul>
-<div class="link-row">
-<a class="link-btn" href="baselines.html#track-a">Release setup ↓</a>
-<a class="link-btn green" href="#">Download packet ↓</a>
-</div>
+<div class="link-row"><a class="link-btn" href="evaluation.html#validation-splits">Validation identities</a><a aria-disabled="true" class="link-btn form-link" data-form-track="face" href="#">Face submission form — link pending</a></div>
 </div>
 <div class="card">
-<span class="badge purple">Task 2 · New</span>
-<h4>Speech Unlearning Track</h4>
-<p>Remove a target speaker while keeping prosody, emotion, accent, and overall speech quality.</p>
+<span class="badge purple">Task 2 · Speech</span><h4>Speech Unlearning Track</h4>
+<p>Remove a target speaker while preserving linguistic content, prosody, accent, and speech quality.</p>
 <ul>
-<li>Base model: <a href="https://github.com/yl4579/StyleTTS2" rel="noopener noreferrer" target="_blank">StyleTTS2</a></li>
-<li>Evaluation: speaker similarity, prosody, leakage, naturalness</li>
-<li>Metrics: FSA, RSA, Spk-Similarity, spk-ZRF</li>
+<li>Data: LibriTTS / LibriTTS-R</li><li>Model choice: open</li>
+<li>Suggested checkpoints: <a href="https://huggingface.co/yl4579/StyleTTS2-LibriTTS" rel="noopener noreferrer" target="_blank">StyleTTS2-LibriTTS</a>, <a href="https://huggingface.co/coqui/XTTS-v2" rel="noopener noreferrer" target="_blank">XTTS-v2</a></li>
 </ul>
-<div class="link-row">
-<a class="link-btn" href="baselines.html#track-b">Release setup ↓</a>
-<a class="link-btn green" href="#">Download packet ↓</a>
-</div>
+<div class="link-row"><a class="link-btn" href="evaluation.html#validation-splits">Validation speakers</a><a aria-disabled="true" class="link-btn form-link" data-form-track="speech" href="#">Speech submission form — link pending</a></div>
 </div>
 <div class="card">
-<span class="badge">Task 3 · Legacy</span>
-<h4>Concept Unlearning</h4>
-<p>The original benchmark: erase a visual concept while keeping retention, adjacent concepts, and robustness.</p>
-<ul>
-<li>Base model: <a href="https://huggingface.co/CompVis/stable-diffusion-v1-4" rel="noopener noreferrer" target="_blank">Stable Diffusion v1.4</a></li>
-<li>Baselines: ESD, CA, FMN, FADE</li>
-<li>Primary metric: ERR score</li>
-</ul>
-<div class="link-row">
-<a class="link-btn" href="baselines.html">Baselines ↓</a>
-<a class="link-btn green" href="https://kaggle.com/competitions/gen-challenge-u-me-workshop-iccv-25" rel="noopener noreferrer" target="_blank">Kaggle ↗</a>
-</div>
+<span class="badge">Task 3 · Concept</span><h4>Concept Unlearning</h4>
+<p>The original benchmark: erase a visual concept while retaining adjacent concepts, utility, and robustness.</p>
+<ul><li>Reference setting: Stable Diffusion v1.4</li><li>Baselines: ESD, CA, FMN, FADE</li><li>Primary metric: ERR score</li></ul>
+<div class="link-row"><a class="link-btn" href="baselines.html">Baselines</a><a aria-disabled="true" class="link-btn form-link" data-form-track="concept" href="#">Concept submission form — link pending</a></div>
 </div>
 </div>
 </section>
@@ -158,28 +128,23 @@ window.MathJax = {
 <section class="section">
 <h3>Useful links</h3>
 <div class="grid-2">
-<div class="card">
-<h4>Challenge resources</h4>
-<ul>
-<li><a href="https://kaggle.com/competitions/gen-challenge-u-me-workshop-iccv-25" rel="noopener noreferrer" target="_blank">Kaggle challenge page</a></li>
+<div class="card"><h4>Challenge resources</h4><ul>
+<li><a href="call-for-submissions.html">Submission instructions and forms</a></li>
+<li><a href="evaluation.html#validation-splits">Public validation identities</a></li>
+<li><a href="leaderboard.html">Website leaderboard</a></li>
 <li><a href="https://sites.google.com/view/u-and-me-workshop/" rel="noopener noreferrer" target="_blank">U&amp;ME Workshop website</a></li>
-<li><a href="https://shreyanshhub.github.io/GENMU-/" rel="noopener noreferrer" target="_blank">Genμ 2025 challenge (ICCV)</a></li>
-<li><a href="https://colab.research.google.com/drive/1_f6AIjZ5IYeJuVSl27upzSePpTd6-y3U?usp=sharing" rel="noopener noreferrer" target="_blank">Colab evaluation script</a></li>
-</ul>
-</div>
-<div class="card">
-<h4>Datasets &amp; models</h4>
-<ul>
-<li><a href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html" rel="noopener noreferrer" target="_blank">CelebA dataset</a></li>
-<li><a href="https://github.com/NVlabs/ffhq-dataset" rel="noopener noreferrer" target="_blank">FFHQ dataset</a></li>
-<li><a href="https://huggingface.co/FoivosPar/Arc2Face" rel="noopener noreferrer" target="_blank">Arc2Face (HuggingFace)</a></li>
-<li><a href="https://huggingface.co/CompVis/stable-diffusion-v1-4" rel="noopener noreferrer" target="_blank">Stable Diffusion v1.4</a></li>
-<li><a href="https://github.com/yl4579/StyleTTS2" rel="noopener noreferrer" target="_blank">StyleTTS2 (GitHub)</a></li>
-</ul>
-</div>
+<li><a href="https://shreyanshhub.github.io/GENMU-/" rel="noopener noreferrer" target="_blank">Genμ 2025 challenge</a></li>
+</ul></div>
+<div class="card"><h4>Suggested model checkpoints</h4><ul>
+<li><a href="https://huggingface.co/FoivosPar/Arc2Face" rel="noopener noreferrer" target="_blank">Arc2Face</a></li>
+<li><a href="https://huggingface.co/InstantX/InstantID" rel="noopener noreferrer" target="_blank">InstantID</a></li>
+<li><a href="https://huggingface.co/h94/IP-Adapter-FaceID" rel="noopener noreferrer" target="_blank">IP-Adapter-FaceID</a></li>
+<li><a href="https://huggingface.co/yl4579/StyleTTS2-LibriTTS" rel="noopener noreferrer" target="_blank">StyleTTS2-LibriTTS</a></li>
+<li><a href="https://huggingface.co/coqui/XTTS-v2" rel="noopener noreferrer" target="_blank">XTTS-v2</a></li>
+</ul><p class="small-note">These are optional starting points, not mandatory base models.</p></div>
 </div>
 </section>
 <div class="footer">Genμ 2.0 · 2026 edition · U&amp;ME Workshop @ ECCV 2026. Legacy concept unlearning continues as Task 3, alongside two new identity-centric tracks. Contact: <a href="mailto:genmu.challenge.2025@gmail.com">genmu.challenge.2025@gmail.com</a></div>
 </div>
-</body>
+<script defer="True" src="submission-forms.js"></script></body>
 </html>

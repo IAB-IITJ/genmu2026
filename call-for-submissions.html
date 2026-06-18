@@ -6,7 +6,6 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Genμ 2.0 (2026) — Call for Submissions</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet"/><link href="styles.css" rel="stylesheet"/>
-
 <script>
 window.MathJax = {
   tex: {
@@ -30,7 +29,6 @@ window.MathJax = {
 <p>Call for submissions</p>
 </div>
 </div>
-
 </header><div class="header-row"><div class="logo-row">
 <a href="https://shreyanshhub.github.io/GENMU-/" rel="noopener noreferrer" target="_blank" title="Genμ 2025 (ICCV)">
 <img alt="GenMU 2025 Logo" src="genmu-logo.png"/>
@@ -48,85 +46,58 @@ window.MathJax = {
 <a class="" href="faq.html">FAQ</a>
 <a class="prev-year" href="https://shreyanshhub.github.io/GENMU-/" rel="noopener noreferrer" target="_blank">Genμ 2025 ↗</a>
 </nav></div>
-
-<div aria-label="Challenge status" class="challenge-notice" role="status">
-<strong>Challenge open.</strong> Final submission deadline: <time datetime="2026-07-01">1 July 2026</time>. Evaluation and results declaration: <time datetime="2026-07-07">7 July 2026</time>.
-  </div>
+<div aria-label="Challenge status" class="challenge-notice" role="status"><strong>Challenge open.</strong> Final submission deadline: <time datetime="2026-07-10">10 July 2026</time>. Evaluation and results declaration: <time datetime="2026-07-25">25 July 2026</time>.</div>
 <section class="hero">
 <div class="hero-grid">
 <div>
 <span class="chip">Challenge open · Call for submissions</span>
 <h2>How the 2026 challenge is structured</h2>
 <p>Teams can work on the Face Unlearning Track, the Speech Unlearning Track, the legacy concept benchmark, or all three. The challenge is built around forgetting the target without damaging the surrounding capability of the generator.</p>
-<div class="callout">The challenge is open. Final submissions are due <strong>1 July 2026</strong>; evaluation and results declaration are scheduled for <strong>7 July 2026</strong>. Top-performing teams may be invited to co-author a research paper with the organizing team, provided their method surpasses the published baselines. <a href="https://kaggle.com/competitions/gen-challenge-u-me-workshop-iccv-25" rel="noopener noreferrer" target="_blank">Submit on Kaggle ↗</a></div>
+<div class="callout">The challenge is open. Final submissions are due <strong>10 July 2026</strong>; evaluation and results declaration are scheduled for <strong>25 July 2026</strong>. Submit through the Google Form for the selected track. Each form requires a Google Drive weights link, a GitHub repository with the complete code, and full testing instructions.</div>
 </div>
 <div class="hero-card">
 <div class="stat"><b>Status</b><span>Challenge open — submissions are being accepted now.</span></div>
-<div class="stat"><b>Final submission</b><span><time datetime="2026-07-01">1 July 2026</time></span></div>
-<div class="stat"><b>Evaluation &amp; declaration</b><span><time datetime="2026-07-07">7 July 2026</time></span></div>
+<div class="stat"><b>Final submission</b><span><time datetime="2026-07-10">10 July 2026</time></span></div>
+<div class="stat"><b>Evaluation &amp; results</b><span><time datetime="2026-07-25">25 July 2026</time></span></div>
 </div>
 </div>
 </section>
 <section class="section">
-<h3>Track summary</h3>
+<h3>Track summary</h3><div class="grid-3">
+<div class="card"><span class="badge green">Task 1</span><h4>Face Unlearning</h4><p>Model-agnostic face identity unlearning on CelebA / FFHQ. Participants may use any suitable model and must report the exact checkpoint.</p></div>
+<div class="card"><span class="badge purple">Task 2</span><h4>Speech Unlearning</h4><p>Model-agnostic speaker identity unlearning on LibriTTS / LibriTTS-R. Any compatible TTS or voice-cloning model may be used.</p></div>
+<div class="card"><span class="badge">Task 3</span><h4>Concept Unlearning</h4><p>The retained concept-unlearning benchmark with the published ESD, CA, FMN, and FADE baselines.</p></div>
+</div>
+</section>
+<section class="section">
+<h3>Required submission package</h3>
+<p class="lead">A submission is complete only when all three components below are accessible to the organizers.</p>
 <div class="grid-3">
-<div class="card">
-<span class="badge green" style="margin-bottom:8px;display:inline-flex">Task 1 · New</span>
-<h4>Face Unlearning Track</h4>
-<p>Face identity unlearning using CelebA / FFHQ samples, Arc2Face, and ArcFace-based evaluation. Sub-tasks A1 and A2.</p>
+<div class="card"><h4>Google Drive weights</h4><ul><li>Final unlearned checkpoint or weights</li><li>Share permission enabled</li><li>Clear filename and checkpoint format</li><li>Any required configuration files</li></ul></div>
+<div class="card"><h4>GitHub repository</h4><ul><li>Complete unlearning/training code</li><li>Inference and evaluation entry points</li><li>Environment or dependency file</li><li>Exact commit hash or release tag</li></ul></div>
+<div class="card"><h4>Testing instructions</h4><ul><li>Installation and data preparation</li><li>Exact commands to reproduce outputs</li><li>Hardware and runtime requirements</li><li>Expected output structure and troubleshooting notes</li></ul></div>
 </div>
-<div class="card">
-<span class="badge purple" style="margin-bottom:8px;display:inline-flex">Task 2 · New</span>
-<h4>Speech Unlearning Track</h4>
-<p>Speaker identity unlearning with prosody and attribute preservation for TTS or voice-cloning systems. Sub-tasks B1 and B2.</p>
-</div>
-<div class="card">
-<span class="badge" style="margin-bottom:8px;display:inline-flex">Task 3 · Legacy</span>
-<h4>Concept Unlearning</h4>
-<p>Legacy concept unlearning on Stable Diffusion v1.4 with the original erasing-retention-robustness (ERR) setup.</p>
-</div>
-</div>
+<div class="callout"><strong>Access check:</strong> links that require permission must grant access before the deadline. Inaccessible weights or repositories may be treated as incomplete submissions.</div>
 </section>
 <section class="section">
-<h3>Recommended submission shape</h3>
-<div class="grid-2">
-<div class="card">
-<h4>Method report</h4>
-<ul>
-<li>What is being forgotten and why that formulation was chosen</li>
-<li>How retention is protected during unlearning</li>
-<li>What data or prompts are used in the unlearning procedure</li>
-<li>How the method avoids leakage to adjacent identities or concepts</li>
-</ul>
+<h3>Track submission forms</h3>
+<p class="lead">Use one form per track. Teams entering multiple tracks must submit the corresponding form separately for each track.</p>
+<div class="grid-3">
+<div class="card"><h4>Task 1 · Face</h4><p>Submit model details, CelebA/FFHQ validation results, Drive weights, GitHub code, and testing instructions.</p><a aria-disabled="true" class="link-btn form-link" data-form-track="face" href="#">Face Track Google Form — link pending</a></div>
+<div class="card"><h4>Task 2 · Speech</h4><p>Submit model details, LibriTTS validation results, Drive weights, GitHub code, and testing instructions.</p><a aria-disabled="true" class="link-btn form-link" data-form-track="speech" href="#">Speech Track Google Form — link pending</a></div>
+<div class="card"><h4>Task 3 · Concept</h4><p>Submit method details, benchmark outputs, Drive weights, GitHub code, and testing instructions.</p><a aria-disabled="true" class="link-btn form-link" data-form-track="concept" href="#">Concept Track Google Form — link pending</a></div>
 </div>
-<div class="card">
-<h4>Artifacts</h4>
-<ul>
-<li>Unlearned model checkpoint or inference wrapper</li>
-<li>Short technical write-up (2–4 pages recommended)</li>
-<li>Optional: ablations and qualitative output samples</li>
-<li>Track-specific evaluation logs in the required format</li>
-</ul>
-</div>
-</div>
+<p class="form-admin-note">Organizers: add the three published Google Form URLs once in <code>submission-forms.js</code>; every button on the site will update automatically.</p>
 </section>
 <section class="section">
-<h3>Submission links</h3>
-<div class="card">
-<p>Submit your evaluation CSV and final model via the links below. The Kaggle leaderboard updates in real time based on your uploaded results.</p>
-<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px">
-<a class="link-btn green" href="https://kaggle.com/competitions/gen-challenge-u-me-workshop-iccv-25" rel="noopener noreferrer" target="_blank">Kaggle challenge page ↗</a>
-<a class="link-btn" href="https://colab.research.google.com/drive/1_f6AIjZ5IYeJuVSl27upzSePpTd6-y3U?usp=sharing" rel="noopener noreferrer" target="_blank">Colab evaluation script ↗</a>
-</div>
-</div>
-</section>
-<section class="section">
-<h3>Notes for participants</h3>
-<div class="card">
-<p>The face and speech tracks are intentionally more entangled than ordinary concept erasure. Expect similarity preservation, leakage checks, and attribute retention to matter as much as the forgetting score itself. Methods that aggressively erase the target at the cost of collateral forgetting will score poorly on the retention and geometry metrics.</p>
-</div>
+<h3>Notes for participants</h3><div class="card"><ul>
+<li>Face and speech model choice is open; the suggested Hugging Face checkpoints are optional starting points only.</li>
+<li>Use the released public validation identity groups before submitting.</li>
+<li>The organizers will evaluate submitted code and weights and will update the website leaderboard as verified results become available.</li>
+<li>Do not submit private credentials, access tokens, or datasets that cannot be legally shared.</li>
+</ul></div>
 </section>
 <div class="footer">Genμ 2.0 · 2026 edition · U&amp;ME Workshop @ ECCV 2026. Contact: <a href="mailto:genmu.challenge.2025@gmail.com">genmu.challenge.2025@gmail.com</a></div>
 </div>
-</body>
+<script defer="True" src="submission-forms.js"></script></body>
 </html>

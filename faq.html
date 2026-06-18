@@ -6,7 +6,6 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Genμ 2.0 (2026) — FAQ</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet"/><link href="styles.css" rel="stylesheet"/>
-
 <script>
 window.MathJax = {
   tex: {
@@ -30,7 +29,6 @@ window.MathJax = {
 <p>Frequently asked questions</p>
 </div>
 </div>
-
 </header><div class="header-row"><div class="logo-row">
 <a href="https://shreyanshhub.github.io/GENMU-/" rel="noopener noreferrer" target="_blank" title="Genμ 2025 (ICCV)">
 <img alt="GenMU 2025 Logo" src="genmu-logo.png"/>
@@ -48,10 +46,7 @@ window.MathJax = {
 <a class="active" href="faq.html">FAQ</a>
 <a class="prev-year" href="https://shreyanshhub.github.io/GENMU-/" rel="noopener noreferrer" target="_blank">Genμ 2025 ↗</a>
 </nav></div>
-
-<div aria-label="Challenge status" class="challenge-notice" role="status">
-<strong>Challenge open.</strong> Final submission deadline: <time datetime="2026-07-01">1 July 2026</time>. Evaluation and results declaration: <time datetime="2026-07-07">7 July 2026</time>.
-  </div>
+<div aria-label="Challenge status" class="challenge-notice" role="status"><strong>Challenge open.</strong> Final submission deadline: <time datetime="2026-07-10">10 July 2026</time>. Evaluation and results declaration: <time datetime="2026-07-25">25 July 2026</time>.</div>
 <section class="hero">
 <div class="hero-grid">
 <div>
@@ -69,49 +64,19 @@ window.MathJax = {
 <section class="section">
 <h3>FAQ</h3>
 <div class="card">
-<div class="faq-item">
-<h4>Is the original Genμ challenge still part of this website?</h4>
-<p>Yes. The earlier concept-unlearning challenge is retained as Task 3 so teams can still benchmark against the legacy setting. The 2025 edition website is also linked in the navigation under "Genμ 2025 ↗".</p>
-</div>
-<div class="faq-item">
-<h4>What is new in 2026?</h4>
-<p>Two identity-centric tracks have been added: Task 1 (Face Unlearning Track) and Task 2 (Speech Unlearning Track). Each track has two sub-tasks focused on different preservation objectives.</p>
-</div>
-<div class="faq-item">
-<h4>How are the tasks ordered?</h4>
-<p>Task 1 is Face Unlearning, Task 2 is Speech Unlearning, and Task 3 is the legacy Concept Unlearning benchmark. The ordering reflects the two new identity tracks first, followed by the retained benchmark.</p>
-</div>
-<div class="faq-item">
-<h4>What data is used for the Face Unlearning Track (Task 1)?</h4>
-<p>Target identities are sampled from CelebA and FFHQ. Arc2Face is the base model, and ArcFace embeddings are used for evaluation, leakage tests, and retention checks.</p>
-</div>
-<div class="faq-item">
-<h4>What data is used for the Speech Unlearning Track (Task 2)?</h4>
-<p>The speech track is built around a target-speaker set and a retention set with diverse prosody, accents, and emotions. Candidate corpora include LibriTTS, VCTK, and LJ Speech. The base model is StyleTTS2, evaluated with ECAPA-TDNN for speaker verification.</p>
-</div>
-<div class="faq-item">
-<h4>Can teams submit to more than one track?</h4>
-<p>Yes. Submissions to one, two, or all three tracks are welcome. The leaderboard shows per-track rankings, and teams can focus on whichever track best showcases their method.</p>
-</div>
-<div class="faq-item">
-<h4>Where is the Kaggle challenge?</h4>
-<p>The live leaderboard and submission portal are at <a href="https://kaggle.com/competitions/gen-challenge-u-me-workshop-iccv-25" rel="noopener noreferrer" target="_blank">kaggle.com/competitions/gen-challenge-u-me-workshop-iccv-25</a>. Upload the CSV produced by the evaluation script to see your score update in real time.</p>
-</div>
-<div class="faq-item">
-<h4>What matters most in evaluation?</h4>
-<p>Each track balances forgetting against retention. Removing the target identity or concept is necessary but not sufficient — preserving nearby identities, attributes, style, and output quality matters equally. Methods that erase aggressively at the cost of collateral damage will score poorly.</p>
-</div>
-<div class="faq-item">
-<h4>When are the challenge dates?</h4>
-<p>The challenge is open. The final submission deadline is <strong>1 July 2026</strong>. Submission evaluation and results declaration are scheduled for <strong>7 July 2026</strong>. Follow the <a href="https://sites.google.com/view/u-and-me-workshop/" rel="noopener noreferrer" target="_blank">workshop website</a> for related workshop updates.</p>
-</div>
-<div class="faq-item">
-<h4>How do I contact the organizers?</h4>
-<p>Email <a href="mailto:genmu.challenge.2025@gmail.com">genmu.challenge.2025@gmail.com</a> for questions about any track.</p>
-</div>
+<div class="faq-item"><h4>Is the original Genμ challenge still included?</h4><p>Yes. The earlier concept-unlearning challenge remains Task 3, while Tasks 1 and 2 cover face and speech identity unlearning.</p></div>
+<div class="faq-item"><h4>Are face and speech participants restricted to one base model?</h4><p>No. Tasks 1 and 2 are model-agnostic. Teams may use any suitable model, provided the exact model/checkpoint is declared and the submitted repository reproduces the outputs. Suggested Hugging Face checkpoints are listed on the <a href="baselines.html">baselines page</a>.</p></div>
+<div class="faq-item"><h4>What are the public validation identities?</h4><p>The released CelebA and LibriTTS forget/retain groups are listed on the <a href="evaluation.html#validation-splits">evaluation page</a> and are also downloadable as CSV and JSON.</p></div>
+<div class="faq-item"><h4>How do teams submit?</h4><p>There are three track-specific Google Forms. Each submission must include a shareable Google Drive link to the final weights, a GitHub repository containing the complete code, and detailed setup and testing instructions. Teams entering multiple tracks submit one form per track.</p></div>
+<div class="faq-item"><h4>Where are submissions and rankings handled?</h4><p>Submissions are collected through the three track-specific Google Forms. The organizers evaluate the submitted artifacts directly and update the leaderboard on this website as verified results become available.</p></div>
+<div class="faq-item"><h4>Can teams submit to more than one track?</h4><p>Yes. Submissions to one, two, or all three tracks are welcome.</p></div>
+<div class="faq-item"><h4>What matters most in evaluation?</h4><p>Each track balances forgetting against retention. Removing the target is necessary but not sufficient; preserving nearby identities, attributes, style, intelligibility, and output quality is equally important.</p></div>
+<div class="faq-item"><h4>What are the challenge dates?</h4><p>The final submission deadline is <strong>10 July 2026</strong>. Evaluation and final results declaration are scheduled for <strong>25 July 2026</strong>.</p></div>
+<div class="faq-item"><h4>Where are the submission forms?</h4><p>The three form buttons are available on the <a href="call-for-submissions.html">Call for Submissions</a> page. Until the organizers publish the final URLs, the buttons are marked “link pending.”</p></div>
+<div class="faq-item"><h4>How do I contact the organizers?</h4><p>Email <a href="mailto:genmu.challenge.2025@gmail.com">genmu.challenge.2025@gmail.com</a>.</p></div>
 </div>
 </section>
 <div class="footer">Genμ 2.0 · 2026 edition · U&amp;ME Workshop @ ECCV 2026. Contact: <a href="mailto:genmu.challenge.2025@gmail.com">genmu.challenge.2025@gmail.com</a></div>
 </div>
-</body>
+<script defer="True" src="submission-forms.js"></script></body>
 </html>

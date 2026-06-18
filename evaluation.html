@@ -6,7 +6,6 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Genμ 2.0 (2026) — Evaluation</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet"/><link href="styles.css" rel="stylesheet"/>
-
 <script>
 window.MathJax = {
   tex: {
@@ -30,7 +29,6 @@ window.MathJax = {
 <p>Evaluation protocol</p>
 </div>
 </div>
-
 </header><div class="header-row"><div class="logo-row">
 <a href="https://shreyanshhub.github.io/GENMU-/" rel="noopener noreferrer" target="_blank" title="Genμ 2025 (ICCV)">
 <img alt="GenMU 2025 Logo" src="genmu-logo.png"/>
@@ -48,10 +46,7 @@ window.MathJax = {
 <a class="" href="faq.html">FAQ</a>
 <a class="prev-year" href="https://shreyanshhub.github.io/GENMU-/" rel="noopener noreferrer" target="_blank">Genμ 2025 ↗</a>
 </nav></div>
-
-<div aria-label="Challenge status" class="challenge-notice" role="status">
-<strong>Challenge open.</strong> Final submission deadline: <time datetime="2026-07-01">1 July 2026</time>. Evaluation and results declaration: <time datetime="2026-07-07">7 July 2026</time>.
-  </div>
+<div aria-label="Challenge status" class="challenge-notice" role="status"><strong>Challenge open.</strong> Final submission deadline: <time datetime="2026-07-10">10 July 2026</time>. Evaluation and results declaration: <time datetime="2026-07-25">25 July 2026</time>.</div>
 <section class="hero">
 <div class="hero-grid">
 <div>
@@ -67,6 +62,26 @@ window.MathJax = {
 </div>
 </section>
 <section class="section">
+<h3>Model-agnostic evaluation</h3>
+<div class="card"><p>For Tasks 1 and 2, teams may unlearn any suitable face-generation, TTS, or voice-cloning model. Rankings are based on the common challenge metrics rather than a mandatory base architecture. Every submission must state the exact model and checkpoint, provide complete executable code, and include deterministic instructions for generating the outputs used by the organizers.</p></div>
+</section><section class="section" id="validation-splits">
+<h3>Public validation identity groups</h3>
+<p class="lead">Use these public groups to validate forgetting and retention before final submission. The final evaluation may include additional held-out identities.</p>
+<div class="grid-2">
+<div class="card"><span class="badge green">CelebA</span><h4>Face validation groups</h4>
+<div class="table-wrap"><table><thead><tr><th>Set</th><th>Forget identity</th><th>Retain identities</th></tr></thead><tbody>
+<tr><td>Face Set 1</td><td><code>3422</code></td><td><code>5230</code>, <code>5239</code>, <code>1539</code></td></tr>
+<tr><td>Face Set 2</td><td><code>3376</code></td><td><code>3602</code>, <code>608</code>, <code>7405</code></td></tr>
+</tbody></table></div></div>
+<div class="card"><span class="badge purple">LibriTTS dev-clean</span><h4>Speech validation groups</h4>
+<div class="table-wrap"><table><thead><tr><th>Set</th><th>Forget speaker</th><th>Retain speakers</th></tr></thead><tbody>
+<tr><td>Speech Set 1 · female cohort</td><td><code>84</code></td><td><code>5895</code>, <code>3853</code>, <code>5338</code></td></tr>
+<tr><td>Speech Set 2 · male cohort</td><td><code>6241</code></td><td><code>6295</code>, <code>2428</code>, <code>3752</code></td></tr>
+</tbody></table></div>
+<p class="small-note">The LibriTTS groups are same-gender, English, clean-development cohorts selected to create acoustically confusable retention cases. Teams should evaluate similarity with the challenge speaker-embedding protocol rather than assuming speaker IDs are interchangeable.</p></div>
+</div>
+<div class="link-row"><a class="link-btn" download="" href="validation-splits.csv">Download CSV</a><a class="link-btn" download="" href="validation-splits.json">Download JSON</a></div>
+</section><section class="section">
 <h3>Task 1: Face Unlearning Track</h3>
 <p class="lead">Forget a specific face identity while preserving neighboring identities and facial attributes. Evaluated using ArcFace embeddings.</p>
 <div class="grid-2">
@@ -185,5 +200,5 @@ window.MathJax = {
 </section>
 <div class="footer">Genμ 2.0 · 2026 edition · U&amp;ME Workshop @ ECCV 2026. Contact: <a href="mailto:genmu.challenge.2025@gmail.com">genmu.challenge.2025@gmail.com</a></div>
 </div>
-</body>
+<script defer="True" src="submission-forms.js"></script></body>
 </html>

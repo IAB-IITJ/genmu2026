@@ -6,7 +6,6 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Genμ 2.0 (2026) — Baselines</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet"/><link href="styles.css" rel="stylesheet"/>
-
 <script>
 window.MathJax = {
   tex: {
@@ -30,7 +29,6 @@ window.MathJax = {
 <p>Baselines and release setup</p>
 </div>
 </div>
-
 </header><div class="header-row"><div class="logo-row">
 <a href="https://shreyanshhub.github.io/GENMU-/" rel="noopener noreferrer" target="_blank" title="Genμ 2025 (ICCV)">
 <img alt="GenMU 2025 Logo" src="genmu-logo.png"/>
@@ -48,21 +46,18 @@ window.MathJax = {
 <a class="" href="faq.html">FAQ</a>
 <a class="prev-year" href="https://shreyanshhub.github.io/GENMU-/" rel="noopener noreferrer" target="_blank">Genμ 2025 ↗</a>
 </nav></div>
-
-<div aria-label="Challenge status" class="challenge-notice" role="status">
-<strong>Challenge open.</strong> Final submission deadline: <time datetime="2026-07-01">1 July 2026</time>. Evaluation and results declaration: <time datetime="2026-07-07">7 July 2026</time>.
-  </div>
+<div aria-label="Challenge status" class="challenge-notice" role="status"><strong>Challenge open.</strong> Final submission deadline: <time datetime="2026-07-10">10 July 2026</time>. Evaluation and results declaration: <time datetime="2026-07-25">25 July 2026</time>.</div>
 <section class="hero">
 <div class="hero-grid">
 <div>
 <span class="chip">Baselines and starting points</span>
 <h2>Legacy baselines and new-track release notes</h2>
-<p>Task 3 retains the four published concept-unlearning baselines from the earlier challenge. Tasks 1 and 2 list the dataset and base-model choices used for the 2026 release, with direct links to downloads.</p>
+<p>Task 3 retains the four published concept-unlearning baselines. For the face and speech tracks, the listed checkpoints are optional starting points: participants may use any suitable model and must document the exact model, checkpoint, and inference interface.</p>
 </div>
 <div class="hero-card">
 <div class="stat"><b>Task 3</b><span>ESD, CA, FMN, and FADE — four published baselines retained from the original challenge.</span></div>
-<div class="stat"><b>Task 1 — Face Unlearning</b><span>CelebA / FFHQ datasets with Arc2Face and ArcFace-based evaluation.</span></div>
-<div class="stat"><b>Task 2 — Speech Unlearning</b><span>StyleTTS2 base model with ECAPA-TDNN speaker verification and attribute checks.</span></div>
+<div class="stat"><b>Task 1 — Face Unlearning</b><span>Open model choice; suggested Hugging Face checkpoints are provided for convenience.</span></div>
+<div class="stat"><b>Task 2 — Speech Unlearning</b><span>Open model choice; suggested TTS / voice-cloning checkpoints are provided for convenience.</span></div>
 </div>
 </div>
 </section>
@@ -108,55 +103,29 @@ window.MathJax = {
 </div>
 </section>
 <section class="section" id="track-a">
-<h3>Task 1 release setup — Face Unlearning Track</h3>
+<h3>Task 1 setup — Face Unlearning Track</h3>
+<p class="lead">Participants may choose any face-conditioned generative model. The evaluation protocol is model-independent; submissions must expose a reproducible generation procedure and identify the exact upstream checkpoint.</p>
 <div class="grid-2">
-<div class="card">
-<span class="badge green" style="margin-bottom:10px;display:inline-flex">Datasets</span>
-<h4>CelebA and FFHQ</h4>
-<p>Target identity samples are drawn from CelebA (202,599 celebrity face images) and FFHQ (70,000 high-quality face images). The task specifies three identities per evaluation instance. ArcFace embeddings are used for similarity, retention, and leakage analysis.</p>
-<div class="link-row">
-<a class="link-btn green" href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html" rel="noopener noreferrer" target="_blank">CelebA ↗</a>
-<a class="link-btn green" href="https://github.com/NVlabs/ffhq-dataset" rel="noopener noreferrer" target="_blank">FFHQ ↗</a>
-<a class="link-btn" href="#">Download release packet ↓</a>
-</div>
-</div>
-<div class="card">
-<span class="badge green" style="margin-bottom:10px;display:inline-flex">Base model</span>
-<h4>Arc2Face</h4>
-<p>Arc2Face is a face-identity-conditioned image generator built on top of Stable Diffusion, where identity is controlled via ArcFace embeddings. It is a natural fit for identity-centric forgetting tasks because the identity representation is explicit and separable from style.</p>
-<div class="link-row">
-<a class="link-btn" href="https://huggingface.co/FoivosPar/Arc2Face" rel="noopener noreferrer" target="_blank">Arc2Face on HuggingFace ↗</a>
-<a class="link-btn" href="https://github.com/foivospar/Arc2Face" rel="noopener noreferrer" target="_blank">GitHub ↗</a>
-</div>
-</div>
+<div class="card"><span class="badge green">Data</span><h4>CelebA and FFHQ</h4><p>The public validation identities are listed on the <a href="evaluation.html#validation-splits">evaluation page</a>. Teams may use the released data under its original terms and must document any additional training data.</p></div>
+<div class="card"><span class="badge green">Optional starting points</span><h4>Suggested Hugging Face checkpoints</h4><ul>
+<li><a href="https://huggingface.co/FoivosPar/Arc2Face" rel="noopener noreferrer" target="_blank">FoivosPar/Arc2Face</a></li>
+<li><a href="https://huggingface.co/InstantX/InstantID" rel="noopener noreferrer" target="_blank">InstantX/InstantID</a></li>
+<li><a href="https://huggingface.co/h94/IP-Adapter-FaceID" rel="noopener noreferrer" target="_blank">h94/IP-Adapter-FaceID</a></li>
+</ul><p class="small-note">These recommendations do not restrict model choice.</p></div>
 </div>
 </section>
 <section class="section" id="track-b">
-<h3>Task 2 release setup — Speech Unlearning Track</h3>
+<h3>Task 2 setup — Speech Unlearning Track</h3>
+<p class="lead">Participants may choose any TTS or voice-cloning model that can be evaluated under the released speaker protocol. The repository must document sample rate, speaker-conditioning interface, and exact checkpoint.</p>
 <div class="grid-2">
-<div class="card">
-<span class="badge purple" style="margin-bottom:10px;display:inline-flex">Datasets</span>
-<h4>Target-speaker speech bundle</h4>
-<p>Release packets include target-speaker speech samples and a retention set covering diverse prosody, accents, and emotional styles. Candidate corpora include LibriTTS, VCTK, and LJ Speech — the exact corpus configuration will be distributed with the release packet.</p>
-<div class="link-row">
-<a class="link-btn green" href="https://www.openslr.org/60/" rel="noopener noreferrer" target="_blank">LibriTTS ↗</a>
-<a class="link-btn green" href="https://datashare.ed.ac.uk/handle/10283/3443" rel="noopener noreferrer" target="_blank">VCTK ↗</a>
-<a class="link-btn green" href="https://keithito.com/LJ-Speech-Dataset/" rel="noopener noreferrer" target="_blank">LJ Speech ↗</a>
-<a class="link-btn" href="#">Download release packet ↓</a>
-</div>
-</div>
-<div class="card">
-<span class="badge purple" style="margin-bottom:10px;display:inline-flex">Base model</span>
-<h4>StyleTTS2</h4>
-<p>StyleTTS2 is a high-quality TTS model that disentangles speaker style from linguistic content, making it well-suited for speaker identity unlearning. The evaluation also uses ECAPA-TDNN embeddings for speaker verification and Whisper for intelligibility (WER).</p>
-<div class="link-row">
-<a class="link-btn" href="https://github.com/yl4579/StyleTTS2" rel="noopener noreferrer" target="_blank">StyleTTS2 GitHub ↗</a>
-<a class="link-btn" href="https://huggingface.co/yl4579/StyleTTS2-LibriTTS" rel="noopener noreferrer" target="_blank">HuggingFace ↗</a>
-</div>
-</div>
+<div class="card"><span class="badge purple">Data</span><h4>LibriTTS / LibriTTS-R validation speakers</h4><p>The public forget and retain speaker groups are listed on the <a href="evaluation.html#validation-splits">evaluation page</a>. The groups use same-gender speakers from the clean development split to make retention deliberately challenging.</p></div>
+<div class="card"><span class="badge purple">Optional starting points</span><h4>Suggested Hugging Face checkpoints</h4><ul>
+<li><a href="https://huggingface.co/yl4579/StyleTTS2-LibriTTS" rel="noopener noreferrer" target="_blank">yl4579/StyleTTS2-LibriTTS</a></li>
+<li><a href="https://huggingface.co/coqui/XTTS-v2" rel="noopener noreferrer" target="_blank">coqui/XTTS-v2</a></li>
+</ul><p class="small-note">Other compatible models are welcome.</p></div>
 </div>
 </section>
 <div class="footer">Genμ 2.0 · 2026 edition · U&amp;ME Workshop @ ECCV 2026. Contact: <a href="mailto:genmu.challenge.2025@gmail.com">genmu.challenge.2025@gmail.com</a></div>
 </div>
-</body>
+<script defer="True" src="submission-forms.js"></script></body>
 </html>
