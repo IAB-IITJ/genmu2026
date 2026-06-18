@@ -6,7 +6,6 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Genμ 2.0 (2026) — Call for Entries</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet"/><link href="styles.css" rel="stylesheet"/>
-
 </head>
 <body>
 <div class="container">
@@ -19,69 +18,33 @@
 <p>Call for entries</p>
 </div>
 </div>
-
 </header><div class="header-row"><div class="logo-row"><img alt="Challenge partner logo" src="second-logo.png"/></div><nav>
 <a class="" href="index.html">Home</a>
 <a class="" href="evaluation.html">Evaluation</a>
 <a class="" href="baselines.html">Baselines</a>
 <a class="" href="organizers.html">Organizers</a>
 <a class="" href="leaderboard.html">Leaderboard</a>
-<a class="active" href="call-for-entries.html">Call for Entries</a>
+<a class="active" href="call-for-submissions.html">Call for Submissions</a>
 <a class="" href="faq.html">FAQ</a>
 </nav></div>
-
 <section class="hero">
 <div class="hero-grid">
 <div>
 <span class="chip">Call for entries</span>
 <h2>How the 2026 challenge is structured</h2>
-<p>Teams can work on the legacy concept benchmark, the face identity track, the speaker identity track, or all three. The challenge is built around forgetting the target without damaging the surrounding capability of the generator.</p>
+<p>Teams may enter one or more of the face, speech, and concept-unlearning tracks. Face and speech model choice is open. Final artifacts are submitted through separate track-specific Google Forms.</p>
 </div>
 <div class="hero-card">
 <div class="stat"><b>Submission scope</b><span>One or more tracks are welcome.</span></div>
-<div class="stat"><b>Primary deliverable</b><span>A model or method that meets the track-specific evaluation protocol.</span></div>
+<div class="stat"><b>Required artifacts</b><span>Drive weights, complete GitHub code, and reproducible testing instructions.</span></div>
 <div class="stat"><b>Core promise</b><span>Forget identities, keep utility.</span></div>
 </div>
 </div>
 </section>
-<section class="section">
-<h3>Track summary</h3>
-<div class="grid-3">
-<div class="card"><h4>Task 3</h4><p>Legacy concept unlearning on Stable Diffusion v1.4 with the original erasing-retention-robustness setup.</p></div>
-<div class="card"><h4>Track A</h4><p>Face identity unlearning using CelebA / FFHQ samples, Arc2Face, and ArcFace-based evaluation.</p></div>
-<div class="card"><h4>Track B</h4><p>Speaker identity unlearning with prosody and attribute preservation for TTS or voice-cloning systems.</p></div>
-</div>
-</section>
-<section class="section">
-<h3>Recommended submission shape</h3>
-<div class="grid-2">
-<div class="card">
-<h4>Method report</h4>
-<ul>
-<li>What is being forgotten</li>
-<li>How retention is protected</li>
-<li>What data or prompts are used</li>
-<li>How the method avoids leakage</li>
-</ul>
-</div>
-<div class="card">
-<h4>Artifacts</h4>
-<ul>
-<li>Unlearned checkpoint or inference wrapper</li>
-<li>Short technical write-up</li>
-<li>Optional ablations and qualitative samples</li>
-<li>Track-specific evaluation logs</li>
-</ul>
-</div>
-</div>
-</section>
-<section class="section">
-<h3>Notes for participants</h3>
-<div class="card">
-<p>The face and speech tracks are intentionally more entangled than ordinary concept erasure. Expect similarity preservation, leakage checks, and attribute retention to matter as much as the forgetting score itself.</p>
-</div>
-</section>
+<section class="section"><h3>Track summary</h3><div class="grid-3"><div class="card"><h4>Task 1 · Face</h4><p>Model-agnostic face identity unlearning with common challenge evaluation.</p></div><div class="card"><h4>Task 2 · Speech</h4><p>Model-agnostic speaker identity unlearning with speaker and utility preservation metrics.</p></div><div class="card"><h4>Task 3 · Concept</h4><p>Legacy concept unlearning with the published benchmark protocol.</p></div></div></section>
+<section class="section"><h3>Submission requirements</h3><div class="grid-3"><div class="card"><h4>Weights</h4><p>Shareable Google Drive link to the final checkpoint.</p></div><div class="card"><h4>Code</h4><p>Complete GitHub repository with dependencies and exact version.</p></div><div class="card"><h4>Instructions</h4><p>Commands and documentation required to test the submission.</p></div></div><p><a class="link-btn" href="call-for-submissions.html">Open the current submission page</a></p></section>
+<section class="section"><h3>Important dates</h3><div class="card"><p>Final submission: <strong>10 July 2026</strong>. Evaluation and results declaration: <strong>25 July 2026</strong>. The website leaderboard is updated as submissions are verified.</p></div></section>
 <div class="footer">Updated for the 2026 edition. Legacy concept unlearning continues as Task 3, alongside two new identity-centric tracks in face and speech.</div>
 </div>
-</body>
+<script defer="True" src="submission-forms.js"></script></body>
 </html>

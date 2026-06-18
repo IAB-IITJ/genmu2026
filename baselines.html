@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Genμ 2.0 (2026) — Baselines</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet"/><link href="styles.css" rel="stylesheet"/>
-
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
 <script>
 window.MathJax = {
   tex: {
@@ -17,7 +16,7 @@ window.MathJax = {
   chtml: { scale: 0.98 }
 };
 </script>
-<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
 <div class="container">
@@ -27,136 +26,81 @@ window.MathJax = {
 <div class="brandtext">
 <div class="kicker">Multimodal unlearning · ECCV 2026</div>
 <h1>Genμ 2.0</h1>
-<p>Baselines and release setup</p>
+<p>Baselines and suggested starting models</p>
 </div>
 </div>
-
-</header><div class="header-row"><div class="logo-row">
-<a href="https://shreyanshhub.github.io/GENMU-/" rel="noopener noreferrer" target="_blank" title="Genμ 2025 (ICCV)">
-<img alt="GenMU 2025 Logo" src="genmu-logo.png"/>
-</a>
-<a href="https://sites.google.com/view/u-and-me-workshop/" rel="noopener noreferrer" target="_blank" title="U&amp;ME Workshop">
-<img alt="U&amp;ME Workshop logo" src="second-logo.png"/>
-</a>
-</div><nav>
+</header>
+<div class="header-row">
+<div class="logo-row">
+<a href="https://shreyanshhub.github.io/GENMU-/" rel="noopener noreferrer" target="_blank" title="Genμ 2025 (ICCV)"><img alt="GenMU 2025 Logo" src="genmu-logo.png"/></a>
+<a href="https://sites.google.com/view/u-and-me-workshop/" rel="noopener noreferrer" target="_blank" title="U&amp;ME Workshop"><img alt="U&amp;ME Workshop logo" src="second-logo.png"/></a>
+</div>
+<nav>
 <a class="" href="index.html">Home</a>
 <a class="" href="evaluation.html">Evaluation</a>
 <a class="active" href="baselines.html">Baselines</a>
-<a class="" href="organizers.html">Organizers</a>
-<a class="" href="leaderboard.html">Leaderboard</a>
-<a class="" href="call-for-submissions.html">Call for Submissions</a>
-<a class="" href="faq.html">FAQ</a>
+<a href="organizers.html">Organizers</a>
+<a href="leaderboard.html">Leaderboard</a>
+<a href="call-for-submissions.html">Call for Submissions</a>
+<a href="faq.html">FAQ</a>
 <a class="prev-year" href="https://shreyanshhub.github.io/GENMU-/" rel="noopener noreferrer" target="_blank">Genμ 2025 ↗</a>
-</nav></div>
-
-<div aria-label="Challenge status" class="challenge-notice" role="status">
-<strong>Challenge open.</strong> Final submission deadline: <time datetime="2026-07-01">1 July 2026</time>. Evaluation and results declaration: <time datetime="2026-07-07">7 July 2026</time>.
-  </div>
+</nav>
+</div>
+<div aria-label="Challenge status" class="challenge-notice" role="status"><strong>Challenge open.</strong> Final submission deadline: <time datetime="2026-07-10">10 July 2026</time>. Evaluation and results declaration: <time datetime="2026-07-25">25 July 2026</time>.</div>
 <section class="hero">
 <div class="hero-grid">
 <div>
 <span class="chip">Baselines and starting points</span>
-<h2>Legacy baselines and new-track release notes</h2>
-<p>Task 3 retains the four published concept-unlearning baselines from the earlier challenge. Tasks 1 and 2 list the dataset and base-model choices used for the 2026 release, with direct links to downloads.</p>
+<h2>Published baselines and optional model references</h2>
+<p>Task 3 retains four published concept-unlearning baselines. Tasks 1 and 2 are model-agnostic: the face and speech models listed here are examples that help teams start quickly, not mandatory architectures.</p>
 </div>
 <div class="hero-card">
-<div class="stat"><b>Task 3</b><span>ESD, CA, FMN, and FADE — four published baselines retained from the original challenge.</span></div>
-<div class="stat"><b>Task 1 — Face Unlearning</b><span>CelebA / FFHQ datasets with Arc2Face and ArcFace-based evaluation.</span></div>
-<div class="stat"><b>Task 2 — Speech Unlearning</b><span>StyleTTS2 base model with ECAPA-TDNN speaker verification and attribute checks.</span></div>
+<div class="stat"><b>Task 1 — Face</b><span>Arc2Face, IDiff-Face, DCFace, EG3D, InstantID, and IP-Adapter-FaceID are useful reference families.</span></div>
+<div class="stat"><b>Task 2 — Speech</b><span>StyleTTS2-LibriTTS and XTTS-v2 are suggested checkpoints; other reproducible models are welcome.</span></div>
+<div class="stat"><b>Task 3 — Concept</b><span>ESD, Concept Ablation, Forget-Me-Not, and FADE remain the published baselines.</span></div>
 </div>
-</div>
-</section>
-<section class="section" id="task3">
-<h3>Task 3 baselines — Concept Unlearning</h3>
-<p class="lead">The table below lists the four published baseline methods retained from the original Genμ challenge, with full citations.</p>
-<div class="table-wrap">
-<table>
-<thead>
-<tr><th>Method</th><th>Full name</th><th>Setting</th><th>Citation</th><th>Status</th></tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>ESD</strong></td>
-<td>Erased Stable Diffusion</td>
-<td>Model-weight concept erasure using negative guidance as the training signal</td>
-<td><a href="https://arxiv.org/abs/2303.07345" rel="noopener noreferrer" target="_blank"><em>Erasing Concepts from Diffusion Models</em>, Gandikota et al., 2023</a></td>
-<td>Retained</td>
-</tr>
-<tr>
-<td><strong>CA</strong></td>
-<td>Concept Ablation</td>
-<td>Maps the target concept distribution to an anchor concept while preserving closely related concepts</td>
-<td><a href="https://arxiv.org/abs/2303.13516" rel="noopener noreferrer" target="_blank"><em>Ablating Concepts in Text-to-Image Diffusion Models</em>, Kumari et al., 2023</a></td>
-<td>Retained</td>
-</tr>
-<tr>
-<td><strong>FMN</strong></td>
-<td>Forget-Me-Not</td>
-<td>Efficient targeted removal of identities, objects, or styles while retaining unrelated generation capability</td>
-<td><a href="https://arxiv.org/abs/2303.17591" rel="noopener noreferrer" target="_blank"><em>Forget-Me-Not: Learning to Forget in Text-to-Image Diffusion Models</em>, Zhang et al., 2023</a></td>
-<td>Retained</td>
-</tr>
-<tr>
-<td><strong>FADE</strong></td>
-<td>Fine-Grained Attenuation for Diffusion Erasure</td>
-<td>Adjacency-aware concept unlearning using a concept neighborhood and mesh modules</td>
-<td><a href="https://arxiv.org/abs/2503.19783" rel="noopener noreferrer" target="_blank"><em>Fine-Grained Erasure in Text-to-Image Diffusion-based Foundation Models</em>, Thakral et al., 2025</a> · <a href="https://github.com/IAB-IITJ/FADE" rel="noopener noreferrer" target="_blank">Code</a></td>
-<td>Retained</td>
-</tr>
-</tbody>
-</table>
 </div>
 </section>
 <section class="section" id="track-a">
-<h3>Task 1 release setup — Face Unlearning Track</h3>
-<div class="grid-2">
-<div class="card">
-<span class="badge green" style="margin-bottom:10px;display:inline-flex">Datasets</span>
-<h4>CelebA and FFHQ</h4>
-<p>Target identity samples are drawn from CelebA (202,599 celebrity face images) and FFHQ (70,000 high-quality face images). The task specifies three identities per evaluation instance. ArcFace embeddings are used for similarity, retention, and leakage analysis.</p>
-<div class="link-row">
-<a class="link-btn green" href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html" rel="noopener noreferrer" target="_blank">CelebA ↗</a>
-<a class="link-btn green" href="https://github.com/NVlabs/ffhq-dataset" rel="noopener noreferrer" target="_blank">FFHQ ↗</a>
-<a class="link-btn" href="#">Download release packet ↓</a>
-</div>
-</div>
-<div class="card">
-<span class="badge green" style="margin-bottom:10px;display:inline-flex">Base model</span>
-<h4>Arc2Face</h4>
-<p>Arc2Face is a face-identity-conditioned image generator built on top of Stable Diffusion, where identity is controlled via ArcFace embeddings. It is a natural fit for identity-centric forgetting tasks because the identity representation is explicit and separable from style.</p>
-<div class="link-row">
-<a class="link-btn" href="https://huggingface.co/FoivosPar/Arc2Face" rel="noopener noreferrer" target="_blank">Arc2Face on HuggingFace ↗</a>
-<a class="link-btn" href="https://github.com/foivospar/Arc2Face" rel="noopener noreferrer" target="_blank">GitHub ↗</a>
-</div>
-</div>
-</div>
+<h3>Task 1 — Face model references</h3>
+<p class="lead">Participants may use any face generator. These references cover identity-conditioned diffusion, synthetic face generation, reference-image personalization, and 3D-aware GANs. Read the <a href="evaluation.html#task-face">full Face Track problem statement</a> before selecting a model.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Model</th><th>Model family and why it is relevant</th><th>Official resources</th></tr></thead>
+<tbody>
+<tr><td><strong>Arc2Face</strong></td><td>Identity-conditioned diffusion model driven by ArcFace embeddings. It offers a direct identity interface and an official downloadable checkpoint.</td><td><a href="https://huggingface.co/FoivosPar/Arc2Face" rel="noopener noreferrer" target="_blank">Hugging Face checkpoint</a> · <a href="https://github.com/foivospar/Arc2Face" rel="noopener noreferrer" target="_blank">official code</a> · <a href="https://arxiv.org/abs/2403.11641" rel="noopener noreferrer" target="_blank">paper</a></td></tr>
+<tr><td><strong>IDiff-Face</strong></td><td>Identity-conditioned latent diffusion system designed to generate synthetic identities with controlled intra-identity variation.</td><td><a href="https://github.com/fdbtrs/IDiff-Face" rel="noopener noreferrer" target="_blank">official code</a> · <a href="https://arxiv.org/abs/2308.04995" rel="noopener noreferrer" target="_blank">paper</a></td></tr>
+<tr><td><strong>DCFace</strong></td><td>Dual-condition diffusion face generator that separates identity and style conditions, making it suitable for studying selective identity removal while retaining variation.</td><td><a href="https://github.com/mk-minchul/dcface" rel="noopener noreferrer" target="_blank">official code</a> · <a href="https://arxiv.org/abs/2304.07060" rel="noopener noreferrer" target="_blank">paper</a></td></tr>
+<tr><td><strong>EG3D</strong></td><td>Efficient Geometry-aware 3D GAN. It is useful for teams studying identity unlearning in a 3D-aware face generator with camera/view control.</td><td><a href="https://github.com/NVlabs/eg3d" rel="noopener noreferrer" target="_blank">official code and pretrained networks</a> · <a href="https://nvlabs.github.io/eg3d/" rel="noopener noreferrer" target="_blank">project page</a> · <a href="https://arxiv.org/abs/2112.07945" rel="noopener noreferrer" target="_blank">paper</a></td></tr>
+<tr><td><strong>InstantID</strong></td><td>Reference-image identity-preserving diffusion approach. Teams using it must clearly separate the fixed base model from the identity-conditioning components they unlearn.</td><td><a href="https://huggingface.co/InstantX/InstantID" rel="noopener noreferrer" target="_blank">Hugging Face</a> · <a href="https://github.com/InstantID/InstantID" rel="noopener noreferrer" target="_blank">official code</a></td></tr>
+<tr><td><strong>IP-Adapter-FaceID</strong></td><td>Face-ID adapter for diffusion models. Suitable for adapter-level or joint base-model/adapter unlearning when the submitted loading procedure is fully documented.</td><td><a href="https://huggingface.co/h94/IP-Adapter-FaceID" rel="noopener noreferrer" target="_blank">Hugging Face files and instructions</a></td></tr>
+</tbody></table></div>
+<div class="callout"><strong>Important:</strong> these models expose identity in different ways. Your repository must define exactly how the target identity is represented, which parameters are modified, how the original and unlearned models are loaded, and how organizers can request the target and retain identities. For a model without a native person-ID interface, such as an unconditional or latent-code GAN, provide a reproducible identity-to-latent or reference-to-latent procedure.</div>
 </section>
 <section class="section" id="track-b">
-<h3>Task 2 release setup — Speech Unlearning Track</h3>
-<div class="grid-2">
-<div class="card">
-<span class="badge purple" style="margin-bottom:10px;display:inline-flex">Datasets</span>
-<h4>Target-speaker speech bundle</h4>
-<p>Release packets include target-speaker speech samples and a retention set covering diverse prosody, accents, and emotional styles. Candidate corpora include LibriTTS, VCTK, and LJ Speech — the exact corpus configuration will be distributed with the release packet.</p>
-<div class="link-row">
-<a class="link-btn green" href="https://www.openslr.org/60/" rel="noopener noreferrer" target="_blank">LibriTTS ↗</a>
-<a class="link-btn green" href="https://datashare.ed.ac.uk/handle/10283/3443" rel="noopener noreferrer" target="_blank">VCTK ↗</a>
-<a class="link-btn green" href="https://keithito.com/LJ-Speech-Dataset/" rel="noopener noreferrer" target="_blank">LJ Speech ↗</a>
-<a class="link-btn" href="#">Download release packet ↓</a>
-</div>
-</div>
-<div class="card">
-<span class="badge purple" style="margin-bottom:10px;display:inline-flex">Base model</span>
-<h4>StyleTTS2</h4>
-<p>StyleTTS2 is a high-quality TTS model that disentangles speaker style from linguistic content, making it well-suited for speaker identity unlearning. The evaluation also uses ECAPA-TDNN embeddings for speaker verification and Whisper for intelligibility (WER).</p>
-<div class="link-row">
-<a class="link-btn" href="https://github.com/yl4579/StyleTTS2" rel="noopener noreferrer" target="_blank">StyleTTS2 GitHub ↗</a>
-<a class="link-btn" href="https://huggingface.co/yl4579/StyleTTS2-LibriTTS" rel="noopener noreferrer" target="_blank">HuggingFace ↗</a>
-</div>
-</div>
-</div>
+<h3>Task 2 — Speech model references</h3>
+<p class="lead">Participants may choose any reproducible TTS or voice-cloning architecture. Read the <a href="evaluation.html#task-speech">full Speech Track problem statement</a> and document sample rate, speaker conditioning, text normalization, and decoding settings.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Model</th><th>Why it is relevant</th><th>Official resource</th></tr></thead>
+<tbody>
+<tr><td><strong>StyleTTS2-LibriTTS</strong></td><td>Style-based TTS starting point aligned with LibriTTS-style evaluation and controllable speaker/style representations.</td><td><a href="https://huggingface.co/yl4579/StyleTTS2-LibriTTS" rel="noopener noreferrer" target="_blank">Hugging Face checkpoint</a></td></tr>
+<tr><td><strong>XTTS-v2</strong></td><td>Multilingual voice-cloning model with reference-audio speaker conditioning; useful for studying target-speaker removal while preserving text and naturalness.</td><td><a href="https://huggingface.co/coqui/XTTS-v2" rel="noopener noreferrer" target="_blank">Hugging Face checkpoint</a></td></tr>
+</tbody></table></div>
+<p class="small-note">Other TTS, zero-shot voice-cloning, diffusion, flow-matching, autoregressive, or codec-language models are welcome if the complete checkpoint and evaluation interface can be reproduced.</p>
+</section>
+<section class="section" id="task3">
+<h3>Task 3 baselines — Concept Unlearning</h3>
+<p class="lead">The table below lists the four published methods retained from the original Genμ challenge. Read the <a href="evaluation.html#task-concept">full Concept Track problem statement</a>.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Method</th><th>Full name</th><th>Setting</th><th>Citation</th></tr></thead>
+<tbody>
+<tr><td><strong>ESD</strong></td><td>Erased Stable Diffusion</td><td>Model-weight concept erasure using negative guidance as the training signal.</td><td><a href="https://arxiv.org/abs/2303.07345" rel="noopener noreferrer" target="_blank"><em>Erasing Concepts from Diffusion Models</em>, Gandikota et al., 2023</a></td></tr>
+<tr><td><strong>CA</strong></td><td>Concept Ablation</td><td>Maps a target concept distribution toward an anchor concept while seeking to preserve related concepts.</td><td><a href="https://arxiv.org/abs/2303.13516" rel="noopener noreferrer" target="_blank"><em>Ablating Concepts in Text-to-Image Diffusion Models</em>, Kumari et al., 2023</a></td></tr>
+<tr><td><strong>FMN</strong></td><td>Forget-Me-Not</td><td>Targeted removal of identities, objects, or styles while retaining unrelated generation capability.</td><td><a href="https://arxiv.org/abs/2303.17591" rel="noopener noreferrer" target="_blank"><em>Forget-Me-Not: Learning to Forget in Text-to-Image Diffusion Models</em>, Zhang et al., 2023</a></td></tr>
+<tr><td><strong>FADE</strong></td><td>Fine-Grained Attenuation for Diffusion Erasure</td><td>Adjacency-aware concept unlearning using concept-neighborhood and mesh components.</td><td><a href="https://arxiv.org/abs/2503.19783" rel="noopener noreferrer" target="_blank"><em>Fine-Grained Erasure in Text-to-Image Diffusion-based Foundation Models</em>, Thakral et al., 2025</a> · <a href="https://github.com/IAB-IITJ/FADE" rel="noopener noreferrer" target="_blank">code</a></td></tr>
+</tbody></table></div>
 </section>
 <div class="footer">Genμ 2.0 · 2026 edition · U&amp;ME Workshop @ ECCV 2026. Contact: <a href="mailto:genmu.challenge.2025@gmail.com">genmu.challenge.2025@gmail.com</a></div>
 </div>
+<script defer src="submission-forms.js"></script>
 </body>
 </html>
