@@ -53,7 +53,7 @@ window.MathJax = {
 <span class="chip">Challenge open · Call for submissions</span>
 <h2>How the 2026 challenge is structured</h2>
 <p>Teams can work on the Face Unlearning Track, the Speech Unlearning Track, the legacy concept benchmark, or all three. The challenge is built around forgetting the target without damaging the surrounding capability of the generator.</p>
-<div class="callout">The challenge is open. Final submissions are due <strong>10 July 2026</strong>; evaluation and results declaration are scheduled for <strong>25 July 2026</strong>. Submit through the Google Form for the selected track. Each form requires a Google Drive weights link, a GitHub repository with the complete code, and full testing instructions.</div>
+<div class="callout">The challenge is open. Final submissions are due <strong>10 July 2026</strong>; evaluation and results declaration are scheduled for <strong>25 July 2026</strong>. Submit through the Google Form for the selected track. Each form requires a shareable drive link to the submitted weights or checkpoint, a GitHub repository with the complete code, and full testing instructions. Any accessible cloud-storage provider may be used.</div>
 </div>
 <div class="hero-card">
 <div class="stat"><b>Status</b><span>Challenge open — submissions are being accepted now.</span></div>
@@ -64,8 +64,8 @@ window.MathJax = {
 </section>
 <section class="section">
 <h3>Track summary</h3><div class="grid-3">
-<div class="card"><span class="badge green">Task 1</span><h4>Face Unlearning</h4><p>Model-agnostic face identity unlearning on CelebA / FFHQ. Participants may use any suitable model and must report the exact checkpoint.</p></div>
-<div class="card"><span class="badge purple">Task 2</span><h4>Speech Unlearning</h4><p>Model-agnostic speaker identity unlearning on LibriTTS / LibriTTS-R. Any compatible TTS or voice-cloning model may be used.</p></div>
+<div class="card"><span class="badge green">Task 1</span><h4>Face Unlearning</h4><p>Model-agnostic face identity unlearning using <a href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html" rel="noopener noreferrer" target="_blank">CelebA</a> and, where applicable, <a href="https://github.com/NVlabs/ffhq-dataset" rel="noopener noreferrer" target="_blank">FFHQ</a>. Participants may use any suitable model and must report the exact checkpoint.</p></div>
+<div class="card"><span class="badge purple">Task 2</span><h4>Speech Unlearning</h4><p>Model-agnostic speaker identity unlearning using <a href="https://www.openslr.org/60/" rel="noopener noreferrer" target="_blank">LibriTTS</a> / <a href="https://www.openslr.org/141/" rel="noopener noreferrer" target="_blank">LibriTTS-R</a>. Any compatible TTS or voice-cloning model may be used.</p></div>
 <div class="card"><span class="badge">Task 3</span><h4>Concept Unlearning</h4><p>The retained concept-unlearning benchmark with the published ESD, CA, FMN, and FADE baselines.</p></div>
 </div>
 </section>
@@ -73,7 +73,7 @@ window.MathJax = {
 <h3>Required submission package</h3>
 <p class="lead">A submission is complete only when all three components below are accessible to the organizers.</p>
 <div class="grid-3">
-<div class="card"><h4>Google Drive weights</h4><ul><li>Final unlearned checkpoint or weights</li><li>Share permission enabled</li><li>Clear filename and checkpoint format</li><li>Any required configuration files</li></ul></div>
+<div class="card"><h4>Drive link</h4><ul><li>Final unlearned checkpoint, weights, or adapter</li><li>Any accessible cloud-storage provider may be used</li><li>Download permission must be enabled for the organizers</li><li>Use clear filenames and include any required configuration files</li></ul></div>
 <div class="card"><h4>GitHub repository</h4><ul><li>Complete unlearning/training code</li><li>Inference and evaluation entry points</li><li>Environment or dependency file</li><li>Exact commit hash or release tag</li></ul></div>
 <div class="card"><h4>Testing instructions</h4><ul><li>Installation and data preparation</li><li>Exact commands to reproduce outputs</li><li>Hardware and runtime requirements</li><li>Expected output structure and troubleshooting notes</li></ul></div>
 </div>
@@ -83,10 +83,11 @@ window.MathJax = {
 <h3>Track submission forms</h3>
 <p class="lead">Use one form per track. Teams entering multiple tracks must submit the corresponding form separately for each track.</p>
 <div class="grid-3">
-<div class="card"><h4>Task 1 · Face</h4><p>Submit model details, CelebA/FFHQ validation results, Drive weights, GitHub code, and testing instructions.</p><a aria-disabled="true" class="link-btn form-link" data-form-track="face" href="#">Face Track Google Form — link pending</a></div>
-<div class="card"><h4>Task 2 · Speech</h4><p>Submit model details, LibriTTS validation results, Drive weights, GitHub code, and testing instructions.</p><a aria-disabled="true" class="link-btn form-link" data-form-track="speech" href="#">Speech Track Google Form — link pending</a></div>
-<div class="card"><h4>Task 3 · Concept</h4><p>Submit method details, benchmark outputs, Drive weights, GitHub code, and testing instructions.</p><a aria-disabled="true" class="link-btn form-link" data-form-track="concept" href="#">Concept Track Google Form — link pending</a></div>
+<div class="card"><h4>Task 1 · Face</h4><p>Submit model details, CelebA/FFHQ validation results, a drive link, GitHub code, and testing instructions.</p><a aria-disabled="true" class="link-btn form-link" data-form-track="face" href="#">Face Track Google Form — link pending</a></div>
+<div class="card"><h4>Task 2 · Speech</h4><p>Submit model details, LibriTTS validation results, a drive link, GitHub code, and testing instructions.</p><a aria-disabled="true" class="link-btn form-link" data-form-track="speech" href="#">Speech Track Google Form — link pending</a></div>
+<div class="card"><h4>Task 3 · Concept</h4><p>Submit method details, benchmark outputs, a drive link, GitHub code, and testing instructions.</p><a aria-disabled="true" class="link-btn form-link" data-form-track="concept" href="#">Concept Track Google Form — link pending</a></div>
 </div>
+<p class="small-note">For any submission-related query, contact <a href="mailto:genmu.challenge.2025@gmail.com">genmu.challenge.2025@gmail.com</a>.</p>
 <p class="form-admin-note">Organizers: add the three published Google Form URLs once in <code>submission-forms.js</code>; every button on the site will update automatically.</p>
 </section>
 <section class="section">

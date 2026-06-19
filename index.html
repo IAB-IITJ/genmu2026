@@ -53,7 +53,7 @@ window.MathJax = {
 <span class="chip">Challenge open · Genμ 2.0 · ECCV 2026</span>
 <h2>Multimodal Identity Unlearning Challenge</h2>
 <p>The 2026 update expands the original Genμ concept-unlearning benchmark into a broader privacy-preserving suite co-located with the U&amp;ME Workshop at ECCV 2026. Three tracks test whether a generative model can forget one specified identity or concept without damaging nearby identities, attributes, styles, or general generation quality.</p>
-<div class="callout"><strong>Submissions are collected through three track-specific Google Forms.</strong> Each entry must provide a shareable Google Drive link to the submitted weights, a GitHub repository containing the complete code, and clear instructions for reproducing and testing the method.</div>
+<div class="callout"><strong>Submissions are collected through three track-specific Google Forms.</strong> Each entry must provide a shareable drive link to the submitted weights or checkpoint. The link may use any accessible cloud-storage provider. A complete GitHub repository and clear reproduction/testing instructions are also required.</div>
 <div class="link-row">
 <a class="link-btn" href="evaluation.html#task-face">Face problem statement</a>
 <a class="link-btn" href="evaluation.html#task-speech">Speech problem statement</a>
@@ -82,11 +82,12 @@ window.MathJax = {
 <h3>How to submit</h3>
 <p class="lead">Use the Google Form for the selected track. A separate form is used for each track.</p>
 <div class="grid-3">
-<div class="card"><h4>1. Weights</h4><p>Upload the final unlearned weights, checkpoint, or adapter to Google Drive and enable access for the organizers.</p></div>
+<div class="card"><h4>1. Weights</h4><p>Upload the final unlearned weights, checkpoint, or adapter to a drive or cloud-storage provider and enable access for the organizers.</p></div>
 <div class="card"><h4>2. Complete code</h4><p>Provide a GitHub repository containing unlearning code, inference code, environment files, and the exact commit or release tag.</p></div>
 <div class="card"><h4>3. Testing instructions</h4><p>Document setup, commands, inputs, expected outputs, hardware requirements, and any track-specific preprocessing needed to reproduce the submission.</p></div>
 </div>
 <div class="link-row form-actions"><a aria-disabled="true" class="link-btn form-link" data-form-track="face" href="#">Face Track Google Form — link pending</a><a aria-disabled="true" class="link-btn form-link" data-form-track="speech" href="#">Speech Track Google Form — link pending</a><a aria-disabled="true" class="link-btn form-link" data-form-track="concept" href="#">Concept Track Google Form — link pending</a></div>
+<p class="small-note">For any submission-related query, contact <a href="mailto:genmu.challenge.2025@gmail.com">genmu.challenge.2025@gmail.com</a>.</p>
 </section>
 <section class="section">
 <h3>Challenge tracks</h3>
@@ -97,8 +98,9 @@ window.MathJax = {
 <p>Given a face generator and a specified target identity, modify the model so that its normal identity-conditioning route can no longer reproduce or verify that person. At the same time, preserve the model's ability to generate the provided retain identities, preserve non-identity attributes, and maintain visual quality.</p>
 <ul>
 <li><strong>Model choice:</strong> open</li>
-<li><strong>Public data:</strong> CelebA identities; FFHQ-compatible generators are also welcome</li>
+<li><strong>Public data:</strong> <a href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html" rel="noopener noreferrer" target="_blank">CelebA official dataset</a>; <a href="https://github.com/NVlabs/ffhq-dataset" rel="noopener noreferrer" target="_blank">FFHQ official dataset and download tools</a> are also supported</li>
 <li><strong>Example models:</strong> <a href="https://huggingface.co/FoivosPar/Arc2Face" rel="noopener noreferrer" target="_blank">Arc2Face</a>, <a href="https://github.com/fdbtrs/IDiff-Face" rel="noopener noreferrer" target="_blank">IDiff-Face</a>, <a href="https://github.com/mk-minchul/dcface" rel="noopener noreferrer" target="_blank">DCFace</a>, <a href="https://github.com/NVlabs/eg3d" rel="noopener noreferrer" target="_blank">EG3D</a></li>
+<li><strong>Ranking:</strong> one Overall Score with 90% from forget/retain accuracy and 10% from geometry/attribute preservation</li>
 </ul>
 <div class="link-row"><a class="link-btn" href="evaluation.html#task-face">Full problem statement &amp; evaluation</a><a class="link-btn" href="baselines.html#track-a">Suggested models</a><a aria-disabled="true" class="link-btn form-link" data-form-track="face" href="#">Face submission form — link pending</a></div>
 </div>
@@ -107,8 +109,9 @@ window.MathJax = {
 <p>Given a TTS or voice-cloning model and a target speaker, modify the model so that generated speech is no longer recognized as that speaker. Preserve the transcript, naturalness, prosody, accent or style attributes required by the subtask, and the voices of acoustically similar retain speakers.</p>
 <ul>
 <li><strong>Model choice:</strong> open</li>
-<li><strong>Public data:</strong> LibriTTS / LibriTTS-R</li>
+<li><strong>Public data:</strong> <a href="https://www.openslr.org/60/" rel="noopener noreferrer" target="_blank">LibriTTS (OpenSLR 60)</a> / <a href="https://www.openslr.org/141/" rel="noopener noreferrer" target="_blank">LibriTTS-R (OpenSLR 141)</a></li>
 <li><strong>Example models:</strong> <a href="https://huggingface.co/yl4579/StyleTTS2-LibriTTS" rel="noopener noreferrer" target="_blank">StyleTTS2-LibriTTS</a>, <a href="https://huggingface.co/coqui/XTTS-v2" rel="noopener noreferrer" target="_blank">XTTS-v2</a></li>
+<li><strong>Ranking:</strong> one Overall Score with 90% from forget/retain accuracy and 10% from prosody/speech-attribute preservation</li>
 </ul>
 <div class="link-row"><a class="link-btn" href="evaluation.html#task-speech">Full problem statement &amp; evaluation</a><a class="link-btn" href="baselines.html#track-b">Suggested models</a><a aria-disabled="true" class="link-btn form-link" data-form-track="speech" href="#">Speech submission form — link pending</a></div>
 </div>
@@ -134,8 +137,8 @@ window.MathJax = {
 <div class="grid-2">
 <div class="card"><h4>Challenge resources</h4><ul>
 <li><a href="call-for-submissions.html">Submission instructions and forms</a></li>
-<li><a href="evaluation.html#face-validation">Face validation identities</a></li>
-<li><a href="evaluation.html#speech-validation">Speech validation speakers</a></li>
+<li><a href="evaluation.html#face-validation">Face validation identities</a> · <a href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html" rel="noopener noreferrer" target="_blank">CelebA dataset</a> · <a href="https://github.com/NVlabs/ffhq-dataset" rel="noopener noreferrer" target="_blank">FFHQ dataset</a></li>
+<li><a href="evaluation.html#speech-validation">Speech validation speakers</a> · <a href="https://www.openslr.org/60/" rel="noopener noreferrer" target="_blank">LibriTTS</a> · <a href="https://www.openslr.org/141/" rel="noopener noreferrer" target="_blank">LibriTTS-R</a></li>
 <li><a href="leaderboard.html">Website leaderboard</a></li>
 <li><a href="https://sites.google.com/view/u-and-me-workshop/" rel="noopener noreferrer" target="_blank">U&amp;ME Workshop website</a></li>
 <li><a href="https://shreyanshhub.github.io/GENMU-/" rel="noopener noreferrer" target="_blank">Genμ 2025 challenge</a></li>
