@@ -32,7 +32,7 @@ window.MathJax = {
 </header>
 <div class="header-row">
 <div class="logo-row">
-<a href="https://shreyanshhub.github.io/GENMU-/" rel="noopener noreferrer" target="_blank" title="Genμ 2025 (ICCV)"><img alt="GenMU 2025 Logo" src="genmu-logo.png"/></a>
+<a href="index.html" title="Genμ 2.0 — 2026 Home"><img alt="Genμ 2.0 2026 Challenge Logo" src="genmu-logo.png"/></a>
 <a href="https://sites.google.com/view/u-and-me-workshop/" rel="noopener noreferrer" target="_blank" title="U&amp;ME Workshop"><img alt="U&amp;ME Workshop logo" src="second-logo.png"/></a>
 </div>
 <nav>
@@ -104,37 +104,32 @@ window.MathJax = {
 <div class="link-row"><a class="link-btn" download href="validation-splits.csv">Download all validation groups · CSV</a><a class="link-btn" download href="validation-splits.json">Download all validation groups · JSON</a></div>
 </div>
 <div class="grid-2" style="margin-top:16px">
-<div class="card"><h4>Primary forgetting-retention metrics</h4><ul>
-<li><strong>Forget Accuracy (FA):</strong> percentage of target-conditioned outputs rejected as the forgotten identity by the organizer face verifier; higher is better.</li>
-<li><strong>Retain Accuracy (RA):</strong> percentage of retained-identity outputs verified as their correct retain identity; higher is better.</li>
-<li><strong>Primary Face Score (PFS):</strong> the equal-weight average of forgetting and retention, \(\mathrm{PFS}=\tfrac{1}{2}(\mathrm{FA}+\mathrm{RA})\).</li>
+<div class="card"><h4>Forgetting and retention metrics</h4><ul>
+<li><strong>Forgetting Score (FS):</strong> \(1-\cos(\mathbf{f}_{\mathrm{gen}},\mathbf{f}_{f})\), the cosine distance between a generated-face embedding and the target embedding; higher indicates stronger separation from the target.</li>
+<li><strong>Retention Score (RS):</strong> mean identity similarity between retained outputs and their corresponding original/retain identities; higher indicates less collateral forgetting.</li>
+<li><strong>Leakage Test:</strong> target verification at \(\mathrm{FAR}=10^{-3}\); the target should fail verification across the prescribed sample set.</li>
+<li><strong>Geometry Preservation (GP):</strong> change in pairwise angular relationships among retained identities, measured using \(\lVert\Delta D\rVert_F\); lower distortion is better.</li>
 </ul></div>
-<div class="card"><h4>Auxiliary preservation metrics</h4><ul>
-<li><strong>Geometry Preservation Score (GPS):</strong> \(100\max\!\left(0,1-\frac{\lVert\Delta D\rVert_F}{\lVert D_{\mathrm{orig}}\rVert_F}\right)\), measuring how well pairwise relationships among retain identities are preserved.</li>
-<li><strong>Attribute Retention Accuracy (ARA):</strong> percentage of supported non-identity attributes preserved under matched requests.</li>
-<li><strong>Face Auxiliary Score (FAS):</strong> \(\mathrm{FAS}=\tfrac{1}{2}(\mathrm{GPS}+\mathrm{ARA})\).</li>
+<div class="card"><h4>Attribute and quality metrics</h4><ul>
+<li><strong>Attribute Retention (AR):</strong> preservation of requested or matched facial attributes after unlearning.</li>
+<li><strong>SSIM / PSNR:</strong> paired fidelity measures where matched outputs are available.</li>
+<li><strong>FID:</strong> distribution-level image quality on the retained evaluation set.</li>
+<li><strong>Failure checks:</strong> blank images, severe artifacts, identity collapse, or broad demographic suppression are treated as loss of utility rather than successful unlearning.</li>
 </ul></div>
-</div>
-<div class="card" style="margin-top:16px">
-<h4>Single leaderboard score — Face Track</h4>
-<p>All component scores are reported on a \(0\)–\(100\) scale. The leaderboard uses one consolidated score:</p>
-<div class="formula-box">\[
-\mathrm{Face\ Overall}=0.90\,\mathrm{PFS}+0.10\,\mathrm{FAS}.
-\]</div>
-<p>The primary forgetting-retention balance contributes 90% of the rank, while geometry and attribute preservation contribute a smaller 10% adjustment. Image-quality measures such as FID, SSIM, and PSNR are reported separately and used as validity checks; they are not directly averaged into the ranking because participants may use different model families. Blank outputs, severe artifacts, or broad identity collapse may invalidate a submission.</p>
-<p style="margin-top:10px"><strong>Tie-break order:</strong> higher PFS, then higher RA, then smaller submitted parameter change.</p>
 </div>
 <div class="card" style="margin-top:16px">
 <h4>Variable and acronym glossary — Face Track</h4>
 <table class="def-table">
 <tr><td>\(G_{\theta}\)</td><td>Original face generator with parameters \(\theta\)</td></tr>
 <tr><td>\(G_{\theta'}\)</td><td>Submitted unlearned generator with parameters \(\theta'\)</td></tr>
-<tr><td>FA / RA</td><td>Forget Accuracy and Retain Accuracy</td></tr>
-<tr><td>PFS</td><td>Primary Face Score, the average of FA and RA</td></tr>
-<tr><td>GPS</td><td>Geometry Preservation Score; higher is better</td></tr>
-<tr><td>ARA</td><td>Attribute Retention Accuracy</td></tr>
-<tr><td>FAS</td><td>Face Auxiliary Score, the average of GPS and ARA</td></tr>
-<tr><td>FID / SSIM / PSNR</td><td>Separately reported image-quality and fidelity measures</td></tr>
+<tr><td>\(\mathbf{f}_{\mathrm{gen}}\)</td><td>ArcFace embedding of a generated image after unlearning</td></tr>
+<tr><td>\(\mathbf{f}_{f}\)</td><td>Reference ArcFace embedding of the forgotten target identity</td></tr>
+<tr><td>FAR</td><td>False Accept Rate; the leakage threshold is \(10^{-3}\)</td></tr>
+<tr><td>FS</td><td>Forgetting Score; higher is better</td></tr>
+<tr><td>RS</td><td>Retention Score over retained identities; higher is better</td></tr>
+<tr><td>GP</td><td>Geometry Preservation; lower pairwise-geometry distortion is better</td></tr>
+<tr><td>AR</td><td>Attribute Retention score</td></tr>
+<tr><td>SSIM / PSNR / FID</td><td>Image fidelity and distribution-quality measures</td></tr>
 </table>
 </div>
 </section>
@@ -152,7 +147,7 @@ window.MathJax = {
 <span class="badge purple">B1 — Similar-speaker and prosody preservation</span>
 <h4>Forget one voice without damaging nearby voices</h4>
 <p>The target and retain speakers are chosen to form deliberately difficult cohorts. The target should leave the target-speaker verification region, while the retain speakers remain close to their original embeddings and the generated utterances preserve pitch contour, energy, duration, and rhythm.</p>
-<ul><li>Use matched transcripts and comparable decoding settings before and after unlearning.</li><li>Avoid global speaker collapse, monotone output, or broad accent suppression.</li><li>The organizers evaluate multiple utterances and reference samples to measure target forgetting and retain-speaker accuracy.</li></ul>
+<ul><li>Use matched transcripts and comparable decoding settings before and after unlearning.</li><li>Avoid global speaker collapse, monotone output, or broad accent suppression.</li><li>The organizers evaluate multiple utterances and reference samples to detect residual target leakage.</li></ul>
 </div>
 <div class="card" id="task-speech-b2">
 <span class="badge purple">B2 — Speech attribute preservation</span>
@@ -164,7 +159,7 @@ window.MathJax = {
 <div class="card" id="speech-validation" style="margin-top:16px">
 <span class="badge purple">Public validation · LibriTTS dev-clean</span>
 <h4>Speech validation speaker groups</h4>
-<p>Use each forget speaker as the unlearning target and the speakers in the same row as the retention cohort. The cohorts are same-gender clean-development groups intended to make retention more challenging. Final closeness is measured by the challenge speaker-embedding protocol, and final evaluation may include held-out speakers. Dataset access: <a href="https://www.openslr.org/60/" rel="noopener noreferrer" target="_blank">LibriTTS (OpenSLR 60)</a> and <a href="https://www.openslr.org/141/" rel="noopener noreferrer" target="_blank">LibriTTS-R (OpenSLR 141)</a>.</p>
+<p>Use each forget speaker as the unlearning target and the speakers in the same row as the retention cohort. The cohorts are same-gender clean-development groups intended to make retention more challenging. Final closeness is measured by the challenge speaker-embedding protocol, and final evaluation may include held-out speakers.</p>
 <div class="table-wrap" style="margin-top:12px"><table><thead><tr><th>Validation set</th><th>Forget speaker</th><th>Retain speakers</th></tr></thead><tbody>
 <tr><td>Speech Set 1 · female cohort</td><td><code>84</code></td><td><code>5895</code>, <code>3853</code>, <code>5338</code></td></tr>
 <tr><td>Speech Set 2 · male cohort</td><td><code>6241</code></td><td><code>6295</code>, <code>2428</code>, <code>3752</code></td></tr>
@@ -172,40 +167,34 @@ window.MathJax = {
 <div class="link-row"><a class="link-btn" download href="validation-splits.csv">Download all validation groups · CSV</a><a class="link-btn" download href="validation-splits.json">Download all validation groups · JSON</a></div>
 </div>
 <div class="grid-2" style="margin-top:16px">
-<div class="card"><h4>Primary forgetting-retention metrics</h4><ul>
-<li><strong>Speaker Forget Accuracy (SFA):</strong> percentage of target-conditioned utterances rejected as the forgotten speaker by the organizer speaker verifier; higher is better.</li>
-<li><strong>Speaker Retain Accuracy (SRA):</strong> percentage of retain-speaker utterances verified as their correct retain speaker; higher is better.</li>
-<li><strong>Primary Speech Score (PSS):</strong> the equal-weight average \(\mathrm{PSS}=\tfrac{1}{2}(\mathrm{SFA}+\mathrm{SRA})\).</li>
+<div class="card"><h4>Forgetting, retention, and leakage</h4><ul>
+<li><strong>Speaker Forgetting Score (FSA):</strong> \(1-\cos(\mathbf{e}_{\mathrm{gen}},\mathbf{e}_{f})\); higher indicates stronger separation from the target voice.</li>
+<li><strong>Speaker Retention Score (RSA):</strong> mean speaker similarity for retained speakers; higher indicates less collateral forgetting.</li>
+<li><strong>Leakage Test:</strong> target-speaker verification should fail at the prescribed EER-derived threshold.</li>
+<li><strong>spk-ZRF:</strong> target-speaker zero-shot recognition failure rate across the evaluation set.</li>
 </ul></div>
-<div class="card"><h4>Auxiliary preservation metrics</h4><ul>
-<li><strong>Prosody Preservation Score (PPS):</strong> a \(0\)–\(100\) score derived from matched \(F_0\), energy, duration, and rhythm preservation.</li>
-<li><strong>Speech Attribute Retention (SAR):</strong> a \(0\)–\(100\) score for supported accent, emotion, speaking rate, and style attributes.</li>
-<li><strong>Speech Auxiliary Score (SAS):</strong> \(\mathrm{SAS}=\tfrac{1}{2}(\mathrm{PPS}+\mathrm{SAR})\).</li>
+<div class="card"><h4>Prosody, quality, and intelligibility</h4><ul>
+<li><strong>Prosody Preservation Score (PPS):</strong> comparison of \(F_0\), energy, duration, and rhythm between matched pre- and post-unlearning outputs.</li>
+<li><strong>Attribute Retention:</strong> preservation of supported accent, emotion, speaking rate, and style attributes.</li>
+<li><strong>MOS / UTMOS:</strong> subjective or model-predicted naturalness.</li>
+<li><strong>WER:</strong> ASR word error rate; lower is better and indicates that linguistic content was preserved.</li>
 </ul></div>
-</div>
-<div class="card" style="margin-top:16px">
-<h4>Single leaderboard score — Speech Track</h4>
-<p>All component scores are reported on a \(0\)–\(100\) scale. The leaderboard uses one consolidated score:</p>
-<div class="formula-box">\[
-\mathrm{Speech\ Overall}=0.90\,\mathrm{PSS}+0.10\,\mathrm{SAS}.
-\]</div>
-<p>The primary forgetting-retention balance contributes 90% of the rank. Prosody and supported speech-attribute preservation contribute the remaining 10%. WER and MOS/UTMOS are reported separately and used as content/naturalness validity checks rather than direct ranking terms, because submissions may use different model families. Unintelligible, silent, or broadly collapsed outputs may invalidate a submission.</p>
-<p style="margin-top:10px"><strong>Tie-break order:</strong> higher PSS, then higher SRA, then smaller submitted parameter change.</p>
 </div>
 <div class="card" style="margin-top:16px">
 <h4>Variable and acronym glossary — Speech Track</h4>
 <table class="def-table">
 <tr><td>\(S_{\phi}\)</td><td>Original speech generator with parameters \(\phi\)</td></tr>
 <tr><td>\(S_{\phi'}\)</td><td>Submitted unlearned speech generator with parameters \(\phi'\)</td></tr>
-<tr><td>SFA / SRA</td><td>Speaker Forget Accuracy and Speaker Retain Accuracy</td></tr>
-<tr><td>PSS</td><td>Primary Speech Score, the average of SFA and SRA</td></tr>
+<tr><td>\(\mathbf{e}_{\mathrm{gen}}\)</td><td>Speaker embedding of generated audio after unlearning</td></tr>
+<tr><td>\(\mathbf{e}_{f}\)</td><td>Reference embedding of the forgotten target speaker</td></tr>
+<tr><td>FSA / RSA</td><td>Speaker forgetting and retention scores</td></tr>
 <tr><td>PPS</td><td>Prosody Preservation Score</td></tr>
-<tr><td>SAR</td><td>Speech Attribute Retention score</td></tr>
-<tr><td>SAS</td><td>Speech Auxiliary Score, the average of PPS and SAR</td></tr>
 <tr><td>\(F_0\)</td><td>Fundamental-frequency or pitch contour</td></tr>
-<tr><td>WER</td><td>Word Error Rate, reported separately; lower is better</td></tr>
-<tr><td>MOS / UTMOS</td><td>Human or model-predicted naturalness, reported separately</td></tr>
-<tr><td>ECAPA-TDNN</td><td>Reference speaker encoder family used for common verification evaluation</td></tr>
+<tr><td>EER</td><td>Equal Error Rate used to derive a speaker-verification threshold</td></tr>
+<tr><td>MOS / UTMOS</td><td>Human or model-predicted speech naturalness</td></tr>
+<tr><td>WER</td><td>Word Error Rate; lower is better</td></tr>
+<tr><td>spk-ZRF</td><td>Target-speaker zero-shot recognition failure rate</td></tr>
+<tr><td>ECAPA-TDNN</td><td>Reference speaker encoder family used for common embedding-space evaluation</td></tr>
 </table>
 </div>
 </section>
@@ -245,7 +234,7 @@ window.MathJax = {
 </section>
 <section class="section">
 <h3>How to interpret a strong submission</h3>
-<div class="card"><p>A high-ranking method is selective. It achieves strong target forgetting and retain-set accuracy across multiple prompts, references, utterances, and random seeds, while preserving the task-specific auxiliary properties. Face and speech submissions are ranked by the single Overall Score defined above; quality and intelligibility measures remain separate validity checks. Concept submissions continue to use the ERR score from the original Genμ evaluation.</p></div>
+<div class="card"><p>A high-ranking method is selective. It meaningfully reduces target leakage, remains effective across multiple prompts, references, utterances, and random seeds, and keeps retained behavior close to the original model. Methods that achieve forgetting only by broadly degrading the generator will score poorly on retention, quality, geometry, prosody, intelligibility, or adjacent-concept tests.</p></div>
 </section>
 <div class="footer">Genμ 2.0 · 2026 edition · U&amp;ME Workshop @ ECCV 2026. Contact: <a href="mailto:genmu.challenge.2025@gmail.com">genmu.challenge.2025@gmail.com</a></div>
 </div>
