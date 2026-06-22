@@ -52,13 +52,13 @@ window.MathJax = {
 <div class="hero-grid">
 <div>
 <span class="chip">Evaluation protocol</span>
-<h2>Three tracks with explicit ranking formulas</h2>
-<p>Face and speech submissions are ranked primarily by ERB, a harmonic balance between successful forgetting and retained-identity accuracy. Secondary preservation scores contribute a smaller term. Concept unlearning continues to use the original ERR protocol.</p>
+<h2>Three tracks with clearly defined evaluation protocols</h2>
+<p>Face and speech submissions are ranked <strong>only by ERB</strong>, the harmonic mean of erasure accuracy and retain accuracy. Preservation, quality, and intelligibility measurements are reported separately and do not affect leaderboard rank. Concept unlearning continues to use the original ERR protocol.</p>
 <div class="link-row"><a class="link-btn" href="#task-face">Task 1 · Face</a><a class="link-btn" href="#task-speech">Task 2 · Speech</a><a class="link-btn" href="#task-concept">Task 3 · Concept</a></div>
 </div>
 <div class="hero-card">
-<div class="stat"><b>Task 1 — Face Unlearning</b><span>Primary ERB score from target erasure and retain-identity accuracy, with geometry and attribute preservation as a secondary term.</span></div>
-<div class="stat"><b>Task 2 — Speech Unlearning</b><span>Primary ERB score from target-speaker erasure and retain-speaker accuracy, with prosody and speech-attribute preservation as a secondary term.</span></div>
+<div class="stat"><b>Task 1 — Face Unlearning</b><span>Ranked only by ERB, computed from target erasure and retain-identity accuracy. Other face metrics are reported separately.</span></div>
+<div class="stat"><b>Task 2 — Speech Unlearning</b><span>Ranked only by ERB, computed from target-speaker erasure and retain-speaker accuracy. Other speech metrics are reported separately.</span></div>
 <div class="stat"><b>Task 3 — Concept Unlearning</b><span>Target erasure, retention, adjacent concepts, indirect/adversarial robustness, and weight-change efficiency.</span></div>
 </div>
 </div>
@@ -78,21 +78,9 @@ window.MathJax = {
 <div class="callout"><strong>Matched evaluation means only the model state changes.</strong> For face models, the same identity reference or ID, prompt, random seed, sampler, number of steps, guidance, resolution, and camera controls are used before and after unlearning. For speech models, the same transcript, reference audio or speaker ID, sample rate, preprocessing, seed, decoder, and generation settings are used. For concept models, the same prompt, negative prompt, seed, sampler, steps, guidance, and resolution are used. This prevents a submission from appearing to forget merely by changing its input interface or inference recipe.</div>
 
 </section>
-<section class="section" id="reproducibility-policy">
-<h3>Reproducibility and resubmission policy</h3>
-<div class="grid-2">
-<div class="card"><h4>Before the deadline</h4><ul>
-<li>Teams may revise a submission until <strong>10 July 2026</strong>.</li>
-<li>Submit the same track form again and mark it as a revision; the latest timestamped complete submission replaces earlier versions.</li>
-<li>All links must remain accessible through the evaluation period.</li>
-</ul></div>
-<div class="card"><h4>After the deadline</h4><ul>
-<li>Weights, model architecture, training data, and substantive method code cannot be replaced.</li>
-<li>We may request one clarification for a missing path, dependency, configuration value, or command. Teams have <strong>48 hours</strong> to respond.</li>
-<li>A clarification may repair execution instructions but cannot change the submitted method, checkpoint, or reported outputs.</li>
-</ul></div>
-</div>
-<div class="callout"><strong>Reproduction failure:</strong> we make up to two reasonable execution attempts using the submitted repository and instructions. If the artifacts remain inaccessible or the result cannot be reproduced after the clarification window, the entry is marked invalid and is not ranked.</div>
+<section class="section" id="submission-revisions">
+<h3>Submission revisions</h3>
+<div class="card"><p>Teams may revise a submission until <strong>10 July 2026</strong> by submitting the same track form again and marking it as a revision. The latest complete submission received before the deadline is treated as the official entry for that team and track.</p></div>
 </section>
 
 <section class="section" id="task-face">
@@ -143,24 +131,20 @@ window.MathJax = {
 <div class="card"><h4>Secondary preservation measurements</h4><ul>
 <li><strong>Geometry Preservation (GP):</strong> \(100\bigl(1-\frac{\lVert\Delta D\rVert_F}{\lVert D_{\mathrm{orig}}\rVert_F+\epsilon}\bigr)\), clipped to \([0,100]\); higher is better.</li>
 <li><strong>Attribute Retention (AR):</strong> percentage of requested or matched non-identity attributes preserved after unlearning; higher is better.</li>
-<li><strong>Visual quality checks:</strong> FID and, where paired outputs are meaningful, SSIM/PSNR. These are reported separately and used to reject globally corrupted or collapsed outputs rather than dominate the ranking.</li>
+<li><strong>Visual quality checks:</strong> FID and, where paired outputs are meaningful, SSIM/PSNR. These are reported separately for analysis and do not contribute to leaderboard rank.</li>
 </ul></div>
 </div>
 <div class="card" id="face-ranking-formula" style="margin-top:16px">
 <h4>Face Track ranking formula</h4>
-<p>The primary score is the <strong>Erasing–Retention Balance (ERB)</strong>:</p>
+<p>The <strong>sole leaderboard ranking score</strong> is the Erasing–Retention Balance (ERB):</p>
 <div class="formula-box">\[
 \mathrm{ERB}_{\mathrm{face}}=
 \frac{2\,EA\,RA}{EA+RA},
 \qquad EA=100-FA.
 \]</div>
-<p>The secondary preservation score and final leaderboard score are:</p>
-<div class="formula-box">\[
-P_{\mathrm{face}}=\frac{GP+AR}{2},
-\qquad
-\mathrm{Overall}_{\mathrm{face}}=0.90\,\mathrm{ERB}_{\mathrm{face}}+0.10\,P_{\mathrm{face}}.
-\]</div>
-<p><strong>Ranking order:</strong> higher Overall Score, then higher ERB, then higher RA. Visual-quality failures can invalidate an entry even when its numerical identity score is high.</p>
+<p>Prosody Preservation and Speech Attribute Retention are reported separately and are not combined with ERB.</p>
+
+<p><strong>Ranking rule:</strong> submissions are ordered only by higher \(\mathrm{ERB}_{\mathrm{face}}\). FA, RA, GP, AR, and visual-quality measurements are displayed as supporting diagnostics.</p>
 </div>
 
 
@@ -227,24 +211,20 @@ P_{\mathrm{face}}=\frac{GP+AR}{2},
 <div class="card"><h4>Secondary preservation measurements</h4><ul>
 <li><strong>Prosody Preservation Score (PPS):</strong> a \([0,100]\) score combining preservation of \(F_0\), energy, duration, and rhythm under the same transcript and decoding setup.</li>
 <li><strong>Speech Attribute Retention (SAR):</strong> preservation of supported accent, emotion, speaking rate, and style attributes; higher is better.</li>
-<li><strong>Quality and intelligibility checks:</strong> WER and MOS/UTMOS are reported separately and are used to reject unintelligible, collapsed, or globally degraded speech rather than dominate the ranking.</li>
+<li><strong>Quality and intelligibility checks:</strong> WER and MOS/UTMOS are reported separately for analysis and do not contribute to leaderboard rank.</li>
 </ul></div>
 </div>
 <div class="card" id="speech-ranking-formula" style="margin-top:16px">
 <h4>Speech Track ranking formula</h4>
-<p>The primary speaker-identity score is:</p>
+<p>The <strong>sole leaderboard ranking score</strong> for the Speech Track is:</p>
 <div class="formula-box">\[
 \mathrm{ERB}_{\mathrm{speech}}=
 \frac{2\,EA\,RA}{EA+RA},
 \qquad EA=100-FA.
 \]</div>
-<p>The secondary preservation score and final leaderboard score are:</p>
-<div class="formula-box">\[
-P_{\mathrm{speech}}=\frac{PPS+SAR}{2},
-\qquad
-\mathrm{Overall}_{\mathrm{speech}}=0.90\,\mathrm{ERB}_{\mathrm{speech}}+0.10\,P_{\mathrm{speech}}.
-\]</div>
-<p><strong>Ranking order:</strong> higher Overall Score, then higher ERB, then higher RA. Entries that fail intelligibility or naturalness checks can be invalidated.</p>
+<p>Prosody Preservation and Speech Attribute Retention are reported separately and are not combined with ERB.</p>
+
+<p><strong>Ranking rule:</strong> submissions are ordered only by higher \(\mathrm{ERB}_{\mathrm{speech}}\). FA, RA, PPS, SAR, WER, and naturalness measurements are displayed as supporting diagnostics.</p>
 </div>
 
 
@@ -301,7 +281,7 @@ P_{\mathrm{speech}}=\frac{PPS+SAR}{2},
 </section>
 <section class="section">
 <h3>How to interpret a strong submission</h3>
-<div class="card"><p>A strong submission is selective and reproducible. It reduces target verification while preserving the intended retain identities or speakers, performs consistently across multiple inputs and seeds, and satisfies the quality checks. For Tasks 1 and 2, optimize the published Overall Score: 90% ERB and 10% secondary preservation. Broadly degrading the generator cannot produce a competitive score and may invalidate the entry.</p></div>
+<div class="card"><p>A strong submission is selective: it reduces target verification while preserving the intended retain identities or speakers across multiple inputs and seeds. For Tasks 1 and 2, the leaderboard is determined only by ERB, which already balances erasure and retention. Additional preservation, quality, and intelligibility measurements are reported separately to make the evaluation transparent.</p></div>
 </section>
 <div class="footer">Genμ 2.0 · 2026 edition · U&amp;ME Workshop @ ECCV 2026. Contact: <a href="mailto:genmu.challenge.2025@gmail.com">genmu.challenge.2025@gmail.com</a></div>
 </div>

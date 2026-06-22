@@ -49,31 +49,33 @@ window.MathJax = {
 <div class="hero-grid">
 <div>
 <span class="chip">Leaderboard</span>
-<h2>COMPETITION STANDINGS — 2026 EDITION</h2>
-<p>The 2026 leaderboard tracks verified submissions across all three tracks. Rankings are maintained on this challenge website and updated as the organizers evaluate submitted weights and code.</p>
-
+<h2>Competition standings — 2026 edition</h2>
+<p>Verified submissions are ranked on this website. Face and Speech rankings are determined <strong>only by ERB</strong>; supporting preservation and quality measurements are shown separately. The Concept Track continues to use ERR.</p>
 </div>
 <div class="hero-card">
 <div class="stat"><b>Status</b><span>Challenge open — submissions are accepted until 10 July 2026.</span></div>
 <div class="stat"><b>Tracks</b><span>Task 1 (Face Unlearning), Task 2 (Speech Unlearning), Task 3 (Concept Unlearning).</span></div>
-<div class="stat"><b>Leaderboard updates</b><span>Verified results are posted here as organizer evaluation progresses.</span></div>
+<div class="stat"><b>Leaderboard updates</b><span>Verified results are posted here as evaluation progresses.</span></div>
 </div>
 </div>
 </section>
 <section class="section">
 <h3>Current status</h3>
-<div class="card"><p>The challenge is open. Submit through the track-specific Google Forms by <strong>10 July 2026</strong>. The organizers will evaluate the submitted weights and repositories, add verified entries to the tables below during the challenge, and declare final results on <strong>25 July 2026</strong>.</p>
+<div class="card"><p>The challenge is open. Submit through the track-specific Google Forms by 10 July 2026. Submitted weights and repositories are verified, qualifying entries are added below, and final results are declared on 25 July 2026.</p>
 <div class="link-row"><a aria-disabled="true" class="link-btn form-link" data-form-track="face" href="#">Face Track Form — link pending</a><a aria-disabled="true" class="link-btn form-link" data-form-track="speech" href="#">Speech Track Form — link pending</a><a aria-disabled="true" class="link-btn form-link" data-form-track="concept" href="#">Concept Track Form — link pending</a></div></div>
 </section>
+<section class="section" id="leaderboard-scoring">
+<h3>Ranking rule</h3>
+<div class="card"><p><strong>Face and Speech:</strong> rank is determined only by \(\mathrm{ERB}=2(EA)(RA)/(EA+RA)\), where \(EA=100-FA\). Other measurements are displayed for transparency but do not affect rank. <strong>Concept:</strong> the original ERR score is used. Full definitions are on the <a href="evaluation.html">Evaluation page</a>.</p></div>
+</section>
+
 <section class="section">
 <h3>Leaderboard — Task 1: Face Unlearning Track</h3>
 <div class="table-wrap">
 <table>
-<thead>
-<tr><th>Rank</th><th>Team</th><th>Model / checkpoint</th><th>Forgetting Score ↑</th><th>Retention Score ↑</th><th>Leakage \(\mathrm{FAR}@10^{-3}\) ↓</th><th>Geometry Preservation ↑</th><th>Updated</th></tr>
-</thead>
+<thead><tr><th>Rank</th><th>Team</th><th>Model / checkpoint</th><th>ERB ↑</th><th>FA ↓</th><th>RA ↑</th><th>GP ↑</th><th>AR ↑</th><th>Updated</th></tr></thead>
 <tbody>
-<tr><td colspan="8" style="text-align:center">No verified entries yet. Rankings will be added as organizer evaluation is completed.</td></tr>
+<tr><td colspan="9" style="text-align:center">No verified entries yet. Rankings will be added after evaluation is completed.</td></tr>
 </tbody>
 </table>
 </div>
@@ -82,11 +84,9 @@ window.MathJax = {
 <h3>Leaderboard — Task 2: Speech Unlearning Track</h3>
 <div class="table-wrap">
 <table>
-<thead>
-<tr><th>Rank</th><th>Team</th><th>Model / checkpoint</th><th>FSA ↑</th><th>RSA ↑</th><th>PPS ↑</th><th>WER ↓</th><th>spk-ZRF ↑</th><th>Updated</th></tr>
-</thead>
+<thead><tr><th>Rank</th><th>Team</th><th>Model / checkpoint</th><th>ERB ↑</th><th>FA ↓</th><th>RA ↑</th><th>PPS ↑</th><th>SAR ↑</th><th>Updated</th></tr></thead>
 <tbody>
-<tr><td colspan="9" style="text-align:center">No verified entries yet. Rankings will be added as organizer evaluation is completed.</td></tr>
+<tr><td colspan="9" style="text-align:center">No verified entries yet. Rankings will be added after evaluation is completed.</td></tr>
 </tbody>
 </table>
 </div>
@@ -99,7 +99,7 @@ window.MathJax = {
 <tr><th>Rank</th><th>Team</th><th>Model / checkpoint</th><th>ERR Score ↑</th><th>Forgetting \(\bar{A}_{\mathrm{fgt}}\) ↑</th><th>Retention \(\bar{A}_{\mathrm{ret}}\) ↑</th><th>Robustness \(\bar{A}_{\mathrm{adv}}\) ↑</th><th>Weight \(\Delta\) ↓</th><th>Updated</th></tr>
 </thead>
 <tbody>
-<tr><td colspan="9" style="text-align:center">No verified entries yet. Rankings will be added as organizer evaluation is completed.</td></tr>
+<tr><td colspan="9" style="text-align:center">No verified entries yet. Rankings will be added after evaluation is completed.</td></tr>
 </tbody>
 </table>
 </div>
