@@ -67,32 +67,49 @@ window.MathJax = {
 <div class="card"><span class="badge">Task 3</span><h4>Concept Unlearning</h4><p>The retained concept-unlearning benchmark with the published ESD, CA, FMN, and FADE baselines.</p></div>
 </div>
 </section>
+<section class="section" id="publication-opportunities">
+<h3>Paper submission and challenge report</h3>
+<div class="grid-2">
+<div class="card"><h4>Regular workshop paper</h4><p>Teams may submit a separate paper describing their method to the U&amp;ME Workshop through regular peer review by <strong>9 July 2026</strong>. This can be done in parallel with the challenge artifact submission due on 10 July.</p></div>
+<div class="card"><h4>Competition report</h4><p>The two highest-ranked eligible teams will be invited to co-author the Genμ 2.0 competition report. Eligibility requires both a top-two finish and a score above the relevant official track baseline. The report will be prepared after evaluation for the workshop camera-ready stage.</p></div>
+</div>
+</section>
+
 <section class="section">
 <h3>Required submission package</h3>
-<p class="lead">A submission is complete only when all three components below are accessible to the organizers.</p>
+<p class="lead">A submission is complete only when all three components below are accessible for evaluation.</p>
 <div class="grid-3">
-<div class="card"><h4>Drive link</h4><ul><li>Final unlearned checkpoint, weights, or adapter</li><li>Any accessible cloud-storage provider may be used</li><li>Download permission must be enabled for the organizers</li><li>Use clear filenames and include any required configuration files</li></ul></div>
+<div class="card"><h4>Drive link</h4><ul><li>Final unlearned checkpoint, weights, or adapter</li><li>Any accessible cloud-storage provider may be used</li><li>Download permission must be enabled for evaluation</li><li>Use clear filenames and include any required configuration files</li></ul></div>
 <div class="card"><h4>GitHub repository</h4><ul><li>Complete unlearning/training code</li><li>Inference and evaluation entry points</li><li>Environment or dependency file</li><li>Exact commit hash or release tag</li></ul></div>
 <div class="card"><h4>Testing instructions</h4><ul><li>Installation and data preparation</li><li>Exact commands to reproduce outputs</li><li>Hardware and runtime requirements</li><li>Expected output structure and troubleshooting notes</li></ul></div>
 </div>
 <div class="callout"><strong>Access check:</strong> links that require permission must grant access before the deadline. Inaccessible weights or repositories may be treated as incomplete submissions.</div>
 </section>
+<section class="section" id="submission-policy">
+<h3>Revision and reproducibility policy</h3>
+<div class="grid-2">
+<div class="card"><h4>Revisions before 10 July</h4><p>Submit the track form again and identify it as a revision. The latest timestamped complete entry is treated as the official submission. Earlier versions are archived and are not evaluated.</p></div>
+<div class="card"><h4>Clarifications after 10 July</h4><p>No replacement checkpoint or substantive method change is allowed. We may request one clarification for an execution issue; the team has 48 hours to respond with corrected instructions or a non-substantive configuration fix.</p></div>
+</div>
+<div class="callout"><strong>Non-reproducible entries:</strong> after up to two reasonable execution attempts and one clarification window, an inaccessible or non-reproducible submission is marked invalid and is not placed on the leaderboard.</div>
+</section>
+
 <section class="section">
 <h3>Track submission forms</h3>
 <p class="lead">Use one form per track. Teams entering multiple tracks must submit the corresponding form separately for each track.</p>
 <div class="grid-3">
-<div class="card"><h4>Task 1 · Face</h4><p>Submit model details, CelebA/FFHQ validation results, Drive weights, GitHub code, and testing instructions.</p><a aria-disabled="true" class="link-btn form-link" data-form-track="face" href="#">Face Track Google Form — link pending</a></div>
-<div class="card"><h4>Task 2 · Speech</h4><p>Submit model details, LibriTTS validation results, Drive weights, GitHub code, and testing instructions.</p><a aria-disabled="true" class="link-btn form-link" data-form-track="speech" href="#">Speech Track Google Form — link pending</a></div>
-<div class="card"><h4>Task 3 · Concept</h4><p>Submit method details, benchmark outputs, Drive weights, GitHub code, and testing instructions.</p><a aria-disabled="true" class="link-btn form-link" data-form-track="concept" href="#">Concept Track Google Form — link pending</a></div>
+<div class="card"><h4>Task 1 · Face</h4><p>Submit model details, CelebA/FFHQ validation results, weights link, GitHub code, and testing instructions.</p><a aria-disabled="true" class="link-btn form-link" data-form-track="face" href="#">Face Track Google Form — link pending</a></div>
+<div class="card"><h4>Task 2 · Speech</h4><p>Submit model details, LibriTTS validation results, weights link, GitHub code, and testing instructions.</p><a aria-disabled="true" class="link-btn form-link" data-form-track="speech" href="#">Speech Track Google Form — link pending</a></div>
+<div class="card"><h4>Task 3 · Concept</h4><p>Submit method details, benchmark outputs, weights link, GitHub code, and testing instructions.</p><a aria-disabled="true" class="link-btn form-link" data-form-track="concept" href="#">Concept Track Google Form — link pending</a></div>
 </div>
 <p class="small-note">For any submission-related query, contact <a href="mailto:genmu.challenge.2025@gmail.com">genmu.challenge.2025@gmail.com</a>.</p>
-<p class="form-admin-note">Organizers: add the three published Google Form URLs once in <code>submission-forms.js</code>; every button on the site will update automatically.</p>
+<p class="form-admin-note">Site administrators: add the three published Google Form URLs once in <code>submission-forms.js</code>; every button on the site will update automatically.</p>
 </section>
 <section class="section">
 <h3>Notes for participants</h3><div class="card"><ul>
 <li>Face and speech model choice is open; the suggested Hugging Face checkpoints are optional starting points only.</li>
 <li>Use the released public validation identity groups before submitting.</li>
-<li>The organizers will evaluate submitted code and weights and will update the website leaderboard as verified results become available.</li>
+<li>We evaluate submitted code and weights and update the website leaderboard as verified results become available.</li>
 <li>Do not submit private credentials, access tokens, or datasets that cannot be legally shared.</li>
 </ul></div>
 </section>
